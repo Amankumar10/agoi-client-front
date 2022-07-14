@@ -1,0 +1,54 @@
+.verify-otp{
+    height: 100vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--home-blue);
+}
+
+.verify-otp-btn{
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--defused-green);
+}
+
+.otp-input-root input{
+    outline: none;
+}
+
+input[type="password"]{
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 8px;
+    border: none;
+}
+
+input[type="password" i]:focus-visible{
+    outline: none !important; 
+    border: none;
+}
+
+.send-otp-txt{
+    margin: 0;
+    margin-bottom: 30px;
+}
+/* div[data-testid=otp-resend-root]{
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+div[data-testid=otp-resend-root] button{
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--defused-green);
+} */

@@ -1,0 +1,152 @@
+
+.complete-profile-modal{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    padding:0 6rem;
+    justify-content: center;
+    border-radius: 22px;
+    background: var(--home-blue);
+}
+
+.complete-profile-modal:focus{
+    outline: none;
+    border: none;
+}
+
+.complete-profile-modal h1{
+    color: white;
+}
+
+.complete-profile-modal p{
+    color: var(--color-light-grey);
+}
+
+.complete-profile-modal .clear-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.clear-btn svg{
+    transform: rotate(45deg);
+}
+
+label{
+    color: var(--color-light-grey) !important;
+}
+
+.input-field{
+    margin-top: 10px;
+}
+
+.MuiOutlinedInput-root{
+    width: 80%;
+    border: none;
+    outline: none;
+    border: none;
+}
+
+.MuiSelect-select:focus-visible,.MuiOutlinedInput-root:focus-visible,.MuiOutlinedInput-notchedOutline:focus-visible{
+    outline: none;
+    border: none;
+}
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    outline: none;
+    border: none;
+}
+
+.MuiOutlinedInput-notchedOutline{
+    background: var(--defused-black) !important;
+    z-index: -1;
+}
+
+.MuiSelect-select svg, .MuiSvgIcon-root{
+    color: white !important;
+}
+
+.MuiSelect-select{
+    width: 80% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-left: 10px !important;
+    color: white !important;
+    background: var(--defused-black) !important;
+}
+
+.rform input,.lform input[type="text"]{
+    width: 80%;
+    height: 50px;
+    background: var(--defused-black);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 13px;
+    padding:8px;
+    color-scheme: dark;
+}
+
+.lform input[type="radio"]{
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    margin-right: 5px;
+}
+
+.lform input[type="radio"]:focus-visible{
+    outline: none;
+}
+
+input[type='radio']:checked:after{
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: var(--defused-green);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+/* 
+input[type='radio']::after{
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+} */
+
+.radio-input-field label{
+    padding: 0;
+    margin: 0;
+}
+
+.radio-input-field{
+    display: flex;
+    align-items: center;
+}

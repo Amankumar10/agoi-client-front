@@ -1,0 +1,179 @@
+.stocks-heading{
+    width: 100%;
+    height: 100px;
+    background: var(--defused-black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.stocks-heading h3{
+    margin: 0;
+}
+
+.complete-profile-stocks{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.complete-profile-stocks p{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.complete-profile-stocks-btn{
+    width: 200px;
+    height: 38px;
+    padding: 4px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bolder;
+    border-radius: 18px;
+    background: var(--white-font);
+    margin-top:10px;
+} 
+
+.stocks-tab{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.tab{
+    padding: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.active-st-tab{
+    transition: 500ms;
+    background: white;
+    border-radius: 13px;
+    color: black;
+}
+
+.stocks-listing{
+    width: 100%;
+    padding: 0 6rem;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stock-list{
+    position: relative;
+    height: 250px;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 20px;
+    margin-right: 20px;
+    background: var(--defused-black);
+    border-radius: 13px;
+}
+
+.stock-status{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    padding: 8px;
+    color : var(--green-color);
+    font-weight: bolder; 
+    font-size: 13px;
+}
+
+.red{
+    background-color: var(--orange-font);
+    color: white;
+}
+
+.green{
+    background-color: rgba(142, 203, 126, 0.7);
+}
+
+.blue{
+    background-color: var(--blue-color);
+    color: white;
+}
+
+.stock-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stock-img img{
+    margin-top: 40px;
+    height: 100px;
+}
+
+.stock-title h3{
+    margin: 0;
+    padding: 0;
+}
+
+.stock-title{
+    /* margin-top: 3px; */
+    padding:0 6px;
+    color: var(--white-font);
+    font-size: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 2.4em;
+    line-height: 1.2em;
+}
+
+.stock-sector p{
+    margin: 0;
+    padding: 0;
+}
+
+.stock-sector{
+    /* margin-top: 6px; */
+    padding:0 6px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: var(--color-light-grey);
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 1.2em;
+    line-height: 1.2em;
+}
+
+.stock-des{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.stock-type p{
+    margin: 0;
+    padding: 0;
+}
+
+.stock-type{
+    /* margin-top: 6px; */
+    padding:0 6px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: var(--color-light-grey);
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 1.2em;
+    line-height: 1.2em;
+}

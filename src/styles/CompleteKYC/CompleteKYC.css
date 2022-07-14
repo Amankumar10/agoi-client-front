@@ -1,0 +1,67 @@
+.complete-kyc-title-container{
+    height: 100px;
+    width: 100%;
+    background: var(--lin-grad-two);
+    color: var(--white-font);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.complete-kyc-title-container h1{
+    font-size: 22px;
+    padding: 0;
+    margin:0;
+}
+
+h2{
+    margin-top: 22px;
+}
+
+.complete-kyc-form{
+    margin-top: 20px;
+    padding: 0 6rem;
+}
+
+.complete-kyc-form input[type="email"],.complete-kyc-form input[type="number"]{
+    padding: 12px;
+}
+
+.complete-kyc-form input[type="text"],.complete-kyc-form input[type="email"],.complete-kyc-form input[type="number"]{
+    width: 80%;
+    height: 50px;
+    background: var(--defused-black);
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 18px;
+}
+
+.complete-kyc-form input[type="file"]::file-selector-button{
+    height: 40px;
+    width: 150px;
+    color: white;
+    outline: none;
+    border: 1px solid var(--white-font);
+    background: var(--defused-black);
+    border-radius: 8px;
+}
+
+.complete-kyc-form label{
+    margin-top: 8px;
+}
+
+.complete-kyc-btn{
+    margin: auto;
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 8px;
+    width: 300px;
+    background: rgb(218, 217, 217);
+    color: black;
+    display: flex;
+    user-select: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}

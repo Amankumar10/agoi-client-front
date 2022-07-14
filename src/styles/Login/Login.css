@@ -1,0 +1,104 @@
+.login-login-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+
+.login-banner{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: justify;
+    flex-direction: column;
+    color: whitesmoke;
+    padding: 0 6rem;
+    background:var(--home-blue);
+    background-blend-mode: soft-light;
+}
+
+
+.login-banner h2, .login-banner h3{
+    margin: 0;
+    padding: 0;
+}
+
+.login-banner h2 span{
+    color: rgb(114, 180, 83);
+}
+
+.login-banner p{
+    color: var(--color-light-grey);
+}
+
+.auth-container{
+    width: 45%;
+    padding:0 6rem;
+    height: 100%;
+    background: white;
+}
+
+.auth-container h1{
+    margin-top: 160px;
+}
+
+.phone-input-cont{
+    margin-top: 60px;
+    display: flex;
+    width: fit-content;
+    border: 1px solid #aaaaaa !important;
+    border-radius: 5px;
+}
+
+.copyright-sec{
+    position: absolute;
+    bottom: 10px;
+    color: var(--color-light-grey);
+
+}
+
+.phone-input-cont .submit-btn{
+    border: none;
+    width: 35px;
+    border-radius: 3px;
+    color: white;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: var(--color-dark-grey);
+}
+
+.phone-input div::before{
+    outline: none;
+    border: none;
+}
+
+.phone-input div:hover{
+    outline: none;
+    padding: 0px;
+    border: none;
+}
+
+.MuiInput-root::before, .MuiInput-root::after{
+    border: none !important;
+    outline: none !important;
+}
+
+.MuiInput-underline, .Mui-focused{
+    border: none !important; 
+    outline: none !important;
+}
+
+.phone-input button{
+    border-radius: 3px;
+    background: rgb(219, 214, 246);
+}
+
+.phone-input input:hover{
+    outline: none;
+    border: none;
+}

@@ -1,0 +1,104 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--home-blue);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    z-index: 9999;
+    transition: 300ms;
+}
+
+a{
+    outline: none;
+    color: white;
+    text-decoration: none;
+}
+
+.wallet-container{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+    padding: 5px;
+    display: flex;
+    margin-right: 8px;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-light-grey);
+}
+
+.logo{
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo p{
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.links{
+    flex-basis : 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.links a{
+    color : whitesmoke;
+    text-decoration: none;
+}
+
+.login{
+    flex-basis: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-link{
+    outline: none;
+    color: var(--white-font);
+    text-decoration: none;
+}
+
+.login-container{
+    width: 100px !important;
+    padding: 7px 10px 7px 10px;
+    text-align: center;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.logout-container{
+    width: 40px !important;
+    height: 40px !important;
+    padding: 7px 10px 7px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    cursor: pointer;
+    background: white;
+    border-radius: 25px;
+}
+
+.logout-container img{
+    height: 25px;
+    width: 25px;
+}
+
+.wallet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
