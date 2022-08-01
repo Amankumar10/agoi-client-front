@@ -3,13 +3,12 @@ import "firebase/compat/firestore";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD3N8Vg8Fnfwxu5nJpzolTRvPwpAFpLRPc",
-  authDomain: "agoifinancialservices.com",
-  projectId: "agoifinancialservices-c10b1",
-  storageBucket: "agoifinancialservices-c10b1.appspot.com",
-  messagingSenderId: "904421257435",
-  appId: "1:904421257435:web:a22bcc65d606b8b9d25cfe",
-  measurementId: "G-BGN3GB3TBW",
+  apiKey: "AIzaSyDpCZIvSr0jLqo_oomIx8I5trCM7tnDCzA",
+  authDomain: "agoi-auth.firebaseapp.com",
+  projectId: "agoi-auth",
+  storageBucket: "agoi-auth.appspot.com",
+  messagingSenderId: "83104270554",
+  appId: "1:83104270554:web:5523c20917f21b2411fde3"
 };
 
 firebase.initializeApp(firebaseConfig);
