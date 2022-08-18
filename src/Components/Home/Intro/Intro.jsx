@@ -21,6 +21,7 @@ let Intro = () => {
   let handleClose = () => {
     setOpen(false);
   };
+  console.log(state);
 
   return (
     <>
@@ -29,15 +30,20 @@ let Intro = () => {
         open={openReferral}
       />
       <InfoCardModal handleClose={handleClose} open={open} />
+      {/* {state.wallet_balance} */}
       {/* <div className="home-notice">You are not varified by Admin Yet</div> */}
       <div className="landing-page">
         <div className="con1">
           <div className="con1-heading">
             <p>
+            {/* <Link to={"/wallet"}>cashout</Link> */}
+  {/* &#8377; {state.wallet_balance} */}
+
               Invest in India's leading
               <br />
               private growth companies
             </p>
+           
           </div>
           <div className="heading-btns">
             {/* <button className="res-btn">Explore Stocks</button> */}

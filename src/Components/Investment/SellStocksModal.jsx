@@ -6,9 +6,14 @@ import { useSelector } from "react-redux";
 import { useToasts } from "react-toast-notifications";
 import { BASE_URL } from "../../Constants/api_constants";
 import "../../styles/Investment/SellStockModal.css";
+
+
+
+
 let SellStocksModal = ({ handleClose, open, item, fetchPayemnts }) => {
   let [qty, setQty] = useState(0);
   let state = useSelector((state) => state);
+  // console.log(state);
   let [max, setMax] = useState(0);
   let { addToast } = useToasts();
   let [price_per_share, setPricePerShare] = useState(0);
@@ -35,6 +40,16 @@ let SellStocksModal = ({ handleClose, open, item, fetchPayemnts }) => {
       console.log(e);
       addToast("error occurred", { appearance: "error", autoDismiss: true });
     }
+    
+  };
+  const onChange = (e) => {
+       if (e.target.value <= max) {
+                     setAmount(
+                       (e.target.value * price_per_share).toPrecision(4)
+                     );
+                     setQty(e.target.value);
+                   }
+                 
   };
 
   useEffect(() => {
@@ -44,6 +59,7 @@ let SellStocksModal = ({ handleClose, open, item, fetchPayemnts }) => {
       setPricePerShare(pps);
       setAmount(pps);
       setMax(item.left_shares);
+      console.log(item.left_shares)
     }
   }, [item]);
   return (
@@ -62,18 +78,18 @@ let SellStocksModal = ({ handleClose, open, item, fetchPayemnts }) => {
               <input
                 type="number"
                 max={max}
-                min={max == 0 ? 0 : 1}
+                min={max === 0 ? 0 : 1}
                 value={qty}
-                onChange={(e) => {
-                  if (e.target.value <= max) {
-                    setAmount(
-                      (e.target.value * price_per_share).toPrecision(4)
-                    );
-                    setQty(e.target.value);
-                  }
-                }}
-                // disabled={user.pan_card_number ? true : false}
-                // defaultValue={user.pan_card_number}
+                onChange={onChange}
+                // onChange={(e) => {
+                //   if (e.target.value <= max) {
+                //     setAmount(
+                //       (e.target.value * price_per_share).toPrecision(4)
+                //     );
+                //     setQty(e.target.value);
+                //   }
+                // }}
+               
                 placeholder="Enter Referral Number"
               />
             </div>

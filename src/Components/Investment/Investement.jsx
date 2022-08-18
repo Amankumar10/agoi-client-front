@@ -7,6 +7,11 @@ import { BASE_URL } from "../../Constants/api_constants";
 import { useEffect, useState } from "react";
 import generatePDF from "./repGenerator";
 import SellStocksModal from "./SellStocksModal";
+
+
+
+
+
 let Investment = () => {
   let navigate = useNavigate();
   let state = useSelector((state) => state);
@@ -48,6 +53,8 @@ let Investment = () => {
         open={open}
         fetchPayemnts={fetchPayemnts}
       />
+    
+
       <div className="investment-heading">
         <h3>Browse Investments</h3>
         <div className="investment-chart d-flex justify-content-around align-items-center">
@@ -143,6 +150,12 @@ let Investment = () => {
         </div>
       </div>
       <div className="investment-footer">
+           
+           
+
+
+       
+      
         <p>Please read these important legal notices and disclosures</p>
         <br /> None of the information displayed on or downloadable from
         www.joinAgoi Financial Services.com (the website") represents an offer

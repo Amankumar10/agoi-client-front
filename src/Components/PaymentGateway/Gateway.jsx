@@ -4,9 +4,9 @@ let Gateway = () => {
   return (
     <>
       <div className="gateway-container">
-        <div class="row">
-          <div class="col-75">
-            <div class="container">
+        <div className="row">
+          <div className="col-75">
+            <div className="container">
               <form action="/action_page.php">
                 <div className="row">
                   <div className="col-50">
