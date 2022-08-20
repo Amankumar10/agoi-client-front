@@ -1,0 +1,45 @@
+.hello{
+    color: white;
+    padding-left: 23px;
+    
+    background-color: rgb(13, 14, 14);
+}
+.me{
+    cursor: pointer;
+}
+
+
+/* .me:hover {background: rgb(165, 33, 33);} */
+
+.investment-table{
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+    padding: 0 6rem;
+    height: 30vh;
+    /* cursor: pointer; */
+}
+
+.table{
+    color: white;
+    /* cursor: pointer; */
+}
+
+.table-containers{
+    /* color: white;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll; */
+    cursor: pointer;
+    color: white;
+    background-color: rgb(29, 29, 31);
+    /* border-bottom: 1px solid var(--color-light-grey); */
+}
+
+
+
+/* .dropdown-content a:hover {background: rgb(46, 39, 39);} */
+
+
+
+/* .table-containers :hover {background: rgb(185, 29, 29);} */

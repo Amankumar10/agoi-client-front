@@ -4,21 +4,22 @@ import { Link } from "react-router-dom";
 import { auth } from "../../../firebase/firebase";
 import "../../../styles/Home/Nav/Nav.css";
 import Sell from "../../Investment/Sell";
+import Ping from "../Nav/Ping"
+import Notify from "../../Notify/Notify";
 import { BASE_URL } from "../../../Constants/api_constants";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 
+
 let Nav = () => {
-
-
-
 
   let [open, setOpen] = useState(false);
   let [modalItem, setModalItem] = useState();
-  let [orders, setOrders] = useState([]);
+  let [modalItems, setModalItems] = useState();
 
+  let [orders, setOrders] = useState([]);
 
   let state = useSelector((state) => state);
   // console.log(state);
@@ -44,8 +45,16 @@ let Nav = () => {
       }
     }
   };
+
+
   let handleOpen = (item) => {
     setModalItem(item);
+    setOpen(true);
+  };
+
+
+  let handleOpens = (item) => {
+    setModalItems(item);
     setOpen(true);
   };
 
@@ -55,7 +64,7 @@ let Nav = () => {
 
   useEffect(() => {
     fetchuser();
-    
+        
   }, [state]);
 
   return (
@@ -67,40 +76,20 @@ let Nav = () => {
         open={open}
         fetchuser={fetchuser}
       />
+
+    {/*  */}
+
+      
       <div className="navbar">
-
-
         <GiHamburgerMenu className="burger"
           onClick={() => setOpen(!open)} />
         <div className="logo">
           <p>
             <Link to={"/"}>Agoi Financial Services</Link>
             {/* &#8377; {state.wallet_balance} */}
-          </p>
-
-
-          
+          </p>         
 
         </div>
-        {/* <div>
-
-
-          {orders && orders.map((order) => (
-            <p key={order.wallet_balance}></p>
-          ) )}
-
-          
-
-        </div> */}
-
-
-
-        {!state || !state.multiFactor || !state.multiFactor.user ? (
-          ""
-        ) : (
-          <>
-
-            
             <div className="links v-class-resp h-nav-resp">
               <Link to="/stocks">Discover</Link>
               <Link to={"/investment"}>Investments</Link>
@@ -111,21 +100,16 @@ let Nav = () => {
 
               <div className="dropdown">
                 {/* <div className="wallet-container"> */}
-                <div className="cor" ><button className="dropbtn"></button>
+                <div className="cor" >
+                {/* <button className="dropbtn"></button> */}
                   <span className="material-symbols-outlined">Wallet</span>
                   <div className="dropdown-content">
                     <div
                       onClick={() => handleOpen()}
                       className="we"
                     >
-                      Cashout =                 &#8377; {orders.wallet_balance}
-                     
+                      Cashout =       &#8377; {orders.wallet_balance}
                     </div> 
-
-                
-                    
-
-
                     <Link to={"/wallet"}>Referral History</Link>
                    
                    
@@ -133,18 +117,33 @@ let Nav = () => {
 
                     <Link to={"/Cashouthistory"}>Cashout History</Link>
                   </div></div></div> </div>
-          </>
+      
 
 
+               
+                  <div className="dropdowns">
+                {/* <div className="wallet-container"> */}
+                
+               
+                <span style={{fontSize:"28px"}} className="material-symbols-outlined">notifications</span>
 
+                  <div className="dropdown-contents">
+                    {/* <div className="me"></div> */}
+                
+                    <Notify/>
+             </div>
+            
+                 
+                       
+                     </div>
 
-        )}
-
+                     
         <div className="login">
-          {!state || !state.multiFactor || !state.multiFactor.user ? (
-            ""
-          ) : (
-            <>
+
+
+
+         
+          
               <div className="wallet">
                 {/* <Link to={"/wallet"}> */}
                 <div className="wallet-container">
@@ -156,29 +155,19 @@ let Nav = () => {
                   </span>{" "}
                 </div>
                 {/* </Link> */}
-              </div>
-
-
-
-
+              </div>     
           
-            </>
-
-
-
-          )}
-          {!state || !state.multiFactor || !state.multiFactor.user ? (
             <Link className="login-link" to="/login">
               <div className="login-container">Login</div>
             </Link>
-          ) : (
-            <>
+
+          
               <div className="logout-container" onClick={signoutHandler}>
                 <img src="logout.svg" />
               </div>
-            </>
+        
 
-          )}
+       
         </div>
       </div>
     </>
@@ -186,6 +175,16 @@ let Nav = () => {
 };
 
 export default Nav;
+
+
+
+
+
+
+
+
+
+
 
 
 
