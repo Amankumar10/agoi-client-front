@@ -42,7 +42,20 @@
     
 }
 
+
+.material-symbols-outlined{
+    cursor: pointer;
+}
+
 .we{
+    color: white;
+    padding-left: 7%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+
+.me{
     color: white;
     padding-left: 7%;
     padding-top: 5%;
@@ -65,17 +78,44 @@
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
+
     position: relative;
     /* margin-top: 24px; */
     display: inline-block;
+   
+ 
 }
 
+
+
+
+.dropdowns {
+    position: relative;
+    /* margin-top: 24px; */
+    display: inline-block;
+    padding-right: 23px;
+   
+   
+}
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     cursor: pointer;
     display: none;
+    color: #000;
     position: absolute;
     background-color: #a7a0a0;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.dropdown-contents {
+   
+    display: none;
+    /* color: rgb(221, 12, 12); */
+    position: absolute;
+    background-color:#201f1f;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -91,9 +131,19 @@
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background: rgb(46, 39, 39);}
+
+/* .dropdown-contents a:hover {background: rgb(221, 33, 33);} */
+
 .we:hover {background: rgb(46, 39, 39);}
+
+
+.me:hover {background: rgb(165, 33, 33);}
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;color:rgb(22, 20, 20);}
+
+
+.dropdowns:hover .dropdown-contents {display: block;color:rgb(224, 49, 49);}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 
@@ -133,10 +183,11 @@ a{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .links a{
-    color : whitesmoke;
+    color : white;
     text-decoration: none;
 }
 

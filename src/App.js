@@ -20,6 +20,7 @@ import axios from "axios";
 import { BASE_URL } from "./Constants/api_constants";
 import GetOrderResponse from "./Components/Stocks/GetOrderResponse";
 import Wallet from "./Components/Wallet/wallet";
+import Notify from "./Components/Notify/Notify";
 import Cashouthistory from "./Components/CashoutHistory/Cashouthistory"
 
 let App = () => {
@@ -65,6 +66,10 @@ let App = () => {
             <Route path="/complete-kyc" element={<CompleteKYC />} />
             <Route path="/investment" element={<Investment />} />
             <Route path="/Cashouthistory" element={<Cashouthistory />} />
+            <Route path="/Notify" element={<Notify />} />
+
+         
+
 
             <Route path="/addaccount" element={<AddAccountNumber />} />
             <Route path="/demat" element={<DematStepOne />} />

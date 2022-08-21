@@ -46,8 +46,6 @@ let Cashouthistory = () => {
       //   `
       // );
 
-
-
       if (data && data.data && data.data.data) {
         let response = data.data.data;
         console.log(response);
@@ -119,18 +117,11 @@ let Cashouthistory = () => {
                 {cashout.cashout && cashout.cashout.map((e,idx) => {
                 
                   return (
-                    <>
-                    
+                    <>  
                       <tr key={idx + 6}>
                         <td>{moment(e.createdAt).format('DD MMM YYYY hh:mm A')}</td>                       
                         <td>{e.cashout_amount}</td>
                         <td>{e.cashout_status ? "Approve" : "Reject"}</td>
-
-
-                       
-                    
-                     
-                    
                       </tr>
                     </>
                   );
