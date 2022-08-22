@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useToasts } from "react-toast-notifications";
-import { BASE_URL } from "../../../Constants/api_constants";
-import "../../../styles/Investment/Investment.css";
+import { BASE_URL } from "../../Constants/api_constants";
+import "../../../src/styles/Investment/Investment.css";
 
 let Ping = ({ handleClose, open}) => {
   let [qty, setQty] = useState(0);
@@ -74,10 +74,10 @@ let Ping = ({ handleClose, open}) => {
                                             {/* <tr key={index}> */}
                                             <tr>
                                  
-                                         <th scope="row">{index+1}</th>
+                                         {/* <th scope="row">{index+1}</th> */}
                                          <div
                    
-                      className="we"
+                      className="we" 
                     >
                                                <td>{e.message}</td> 
                                                {/* </div> */}
@@ -106,10 +106,3 @@ let Ping = ({ handleClose, open}) => {
 };
 
 export default Ping;
-
-
-
-
-
-
-
