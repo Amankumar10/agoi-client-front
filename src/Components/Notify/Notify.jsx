@@ -8,7 +8,7 @@ import { BASE_URL } from "../../Constants/api_constants";
 import { useEffect, useState } from "react";
 import moment from "moment";
 import userEvent from "@testing-library/user-event";
-import Ping from '../Home/Nav/Ping';
+import Ping from './Ping';
 
 
 
@@ -59,14 +59,14 @@ const Notify = () => {
 
     
     return (
-<>
+        <>
         <Ping
         handleClose={handleClose}
         item={modalItems}   
         open={open}   
-        // fetchnotify={fetchnotify}
+        fetchnotify={fetchnotify}
     />
-         <div className="investment-table">
+   
         <div className="table-containers">
           <table className="table">
             <thead>
@@ -97,14 +97,14 @@ const Notify = () => {
                                             {/* <tr key={index}> */}
                                             <tr>
                                  
-                                         <th scope="row">{index+1}</th>
-                                         <div
-                      onClick={() => handleOpens()}
-                      className="we"
-                    >
-                                               <td>{e.message}</td> 
-                                               {/* </div> */}
-                                       </div>
+                                         {/* <th scope="row">{index+1}</th> */}
+                                     
+                      <div className="we">
+                      
+                  
+                                               <td onClick={() => handleOpens()}>{e.message}</td> 
+                                               </div>
+                                       
                                             </tr>
                           
                                             
@@ -116,10 +116,11 @@ const Notify = () => {
 
 </table>
                 
-                   
+                 
               
-                </div>
-            //   </div>
+    
+      </div>
+
 
       
 

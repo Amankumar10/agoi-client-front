@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../../../firebase/firebase";
 import "../../../styles/Home/Nav/Nav.css";
 import Sell from "../../Investment/Sell";
-import Ping from "../Nav/Ping"
+// import Ping from "../../Notify/Ping"
 import Notify from "../../Notify/Notify";
 import { BASE_URL } from "../../../Constants/api_constants";
 import axios from "axios";
@@ -53,10 +53,7 @@ let Nav = () => {
   };
 
 
-  let handleOpens = (item) => {
-    setModalItems(item);
-    setOpen(true);
-  };
+
 
   let handleClose = () => {
     setOpen(false);
@@ -132,10 +129,7 @@ let Nav = () => {
                 
                     <Notify/>
              </div>
-            
-                 
-                       
-                     </div>
+            </div>
 
                      
         <div className="login">
@@ -157,22 +151,23 @@ let Nav = () => {
                 {/* </Link> */}
               </div>     
           
-            <Link className="login-link" to="/login">
-              <div className="login-container">Login</div>
-            </Link>
-
-          
-              <div className="logout-container" onClick={signoutHandler}>
-                <img src="logout.svg" />
-              </div>
-        
-
-       
-        </div>
-      </div>
-    </>
-  );
-};
+                   
+           {!state || !state.multiFactor || !state.multiFactor.user ? (
+             <Link className="login-link" to="/login">
+               <div className="login-container">Login</div>
+             </Link>
+           ) : (
+             <>
+               <div className="logout-container" onClick={signoutHandler}>
+                 <img src="logout.svg" />
+               </div>
+             </>
+           )}
+         </div>
+       </div>
+     </>
+   );
+ };
 
 export default Nav;
 
