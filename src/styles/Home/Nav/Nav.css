@@ -14,6 +14,20 @@
     transition: 300ms;
 }
 
+
+
+
+   
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin-left:60px;
+        background-color: rgb(212, 19, 13);
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+
 .gf{
     color: aliceblue;
 }
@@ -28,10 +42,6 @@
   display: none;
                       
 }
-
-
-
-
 
 
 .line{
@@ -52,8 +62,16 @@
     padding-left: 7%;
     padding-top: 5%;
     padding-bottom: 5%;
+    grid-area: 31px;
+   
 }
 
+
+.ee{
+    color: rgb(202, 197, 197);
+    grid-area: 31px;
+
+}
 
 .me{
     color: white;
@@ -238,6 +256,90 @@ a{
 }
 
 
+
+
+/* .navbars {
+   
+    font-size: 22px;
+    padding: 5px 10px;
+  } */
+  
+  /* Define what each icon button should look like */
+  .button {
+    color: white;
+    display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+    position: relative; /* All 'absolute'ly positioned elements are relative to this one */
+    padding: 2px 5px; /* Add some padding so it looks nice */
+  }
+  
+  /* Make the badge float in the top right corner of the button */
+  .button__badge {
+    background-color: #fa3e3e;
+    border-radius: 2px;
+    color: white;
+   
+    padding: 1px 3px;
+    font-size: 10px;
+    
+    position: absolute; /* Position the badge within the relatively positioned button */
+    top: 0;
+    right: 0;
+  }
+
+  .nButton {
+    /* width: 1%; */
+  
+    
+    /* margin-top: 2px; */
+  }
+
+
+
+  .hello{
+    color: white;
+    padding-left: 23px;
+    
+    background-color: rgb(13, 14, 14);
+}
+.me{
+    cursor: pointer;
+}
+
+
+/* .me:hover {background: rgb(165, 33, 33);} */
+
+.investment-table{
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+    padding: 0 6rem;
+    height: 30vh;
+    /* cursor: pointer; */
+}
+
+.table{
+    color: white;
+    /* cursor: pointer; */
+}
+
+.table-containers{
+    /* color: white;
+    height: 100%;
+    width: 100%;*/
+    /* overflow-y: scroll;  */
+    cursor: pointer;
+    color: white;
+    background-color: rgb(29, 29, 31);
+    /* border-bottom: 1px solid var(--color-light-grey); */
+}
+
+
+
+/* .dropdown-content a:hover {background: rgb(46, 39, 39);} */
+
+
+
+/* .table-containers :hover {background: rgb(185, 29, 29);} */
 
 
 @media screen and (max-width:1139px) {

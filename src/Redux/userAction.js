@@ -4,6 +4,3 @@ export const userCreator = (user) => {
     payload: user,
   };
 };
-
-
-

@@ -16,12 +16,12 @@
    let { addToast } = useToasts();
 
    let [amount, setAmount] = useState(0);
+
+   
    let postwalletbalance = async () => {
      try {
        let data = await axios.post(BASE_URL + '/user/cashout', {
 
-       
-         
         // stocks_qty_to_be_sold: qty,
         cashout_amount:qty ,
          user_id: state._id,

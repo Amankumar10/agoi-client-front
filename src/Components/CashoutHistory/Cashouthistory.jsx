@@ -36,15 +36,8 @@ let Cashouthistory = () => {
         `${BASE_URL}/user/${state._id}`
       );
 
-      // const cashoutId 
-
 
       // console.log(state)
-
-      // let data = await axios.get(
-      //   `${BASE_URL}/user/${state._id}
-      //   `
-      // );
 
       if (data && data.data && data.data.data) {
         let response = data.data.data;
@@ -58,10 +51,7 @@ let Cashouthistory = () => {
     
 
 
-  // let arr = [3,3,4]
-  
 
-  // console.log(state._id)
   let handleOpen = (item) => {
     setModalItem(item);
     setOpen(true);
@@ -73,6 +63,7 @@ let Cashouthistory = () => {
 
   useEffect(() => {
     fetchcash();
+    
   }, [state]);
   return (
 
@@ -90,6 +81,9 @@ let Cashouthistory = () => {
                   <div className="investment-item d-flex flex-column">
                     <span style={{ color: "var(--color-light-grey)" }}>
                       Total Investment
+                      {/* <li key="{item}">{item}</li> */}
+                      {/* <p>{cashout && cashout.length}</p> */}
+                      <p style={{ color: "var(--white-font)" }}>{cashout && cashout.length}</p>
                     </span>
                  
                   </div>
@@ -110,7 +104,7 @@ let Cashouthistory = () => {
                     </thead>
 
 
-           {cashout.length && cashout.length === 0 ? (
+           {cashout.length && cashout.length === 1 ? (
               ""
             ) : (
               <tbody>
