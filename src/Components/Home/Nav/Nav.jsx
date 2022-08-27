@@ -72,8 +72,8 @@ let Nav = () => {
   };
 
   let fetchuser = async () => { // to fetch the user from the get by ID api
-    handleClose();
-    handleCloses();
+    // handleClose();
+    // handleCloses();
 
     if(state) {
       let data = await axios.get(
@@ -98,8 +98,8 @@ let Nav = () => {
   
   
   let fetchstatus = async () => {
-    handleClose();
-    handleCloses();
+    // handleClose();
+    // handleCloses();
     // console.log(state._id,'this is id')
     if(state) {
       var data = await axios.get(
@@ -153,10 +153,10 @@ let Nav = () => {
       });
       
       if (data.data && data.data.data) {
-        addToast("Notification has been update", {
-          appearance: "success",
-          autoDismiss: true,
-        });
+        // addToast("Notification has been update", {
+        //   appearance: "success",
+        //   autoDismiss: true,
+        // });
         fetchstatus();
       } else {
         addToast(data.data.message, { appearance: "error", autoDismiss: true });
