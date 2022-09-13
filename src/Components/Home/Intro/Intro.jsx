@@ -111,7 +111,7 @@ let Intro = () => {
 
 
 
-
+{/* 
 <div className="df"><h2>Our Best 
   Workers </h2>
   
@@ -123,13 +123,12 @@ let Intro = () => {
 </div>
 
 
-  {/* http://webdesign-finder.com/techup/wp-content/uploads/2019/05/team01-800x995.jpg */}
   <div className="con3">
       <img
         className="ima"
      src="https://images-cdn.9gag.com/images/thumbnail-facebook/27361130_1469416860.0675_aZE6yP_n.jpg"
      />
-     {/* <h1>sddfsf</h1> */}
+  
     
 <img
         className="ima"
@@ -137,7 +136,7 @@ let Intro = () => {
      "
   />
 
-  </div>
+  </div> */}
 
 
 
