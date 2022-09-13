@@ -25,7 +25,7 @@ let Ping = ({ handleCloses, open,counts,fetchuser}) => {
          aria-describedby="modal-modal-description"
        >
 
-         <div className="sell-card-modals">
+         <div  className="sell-card-modals">
            
       
             <tbody>

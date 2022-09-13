@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
 //  import "../../../Components/Notify/Noftify.css";
+import { Box, Button, makeStyles, Typography, Badge } from "@material-ui/core";
+
 import { auth } from "../../../firebase/firebase";
 import "../../../styles/Home/Nav/Nav.css";
 import Sell from "../../Investment/Sell";
@@ -17,6 +19,27 @@ import { Effect } from "react-notification-badge";
 import { useReducer } from "react";
 import moment from "moment";
 import { blueGrey } from "@mui/material/colors";
+
+
+import React from "react";
+
+
+import FacebookIcon from "@mui/icons-material/Facebook";
+// import SearchIcon from "@material-ui/Search";
+import { SearchOutlined } from "@mui/icons-material";
+// import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+// import { Link } from "react-router-dom";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import SearchIcon from "@mui/icons-material/Search";
+import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
+import CallIcon from "@mui/icons-material/Call";
+
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import PersonIcon from "@mui/icons-material/Person";
+
 
 let Nav = () => {
 
@@ -72,8 +95,8 @@ let Nav = () => {
   };
 
   let fetchuser = async () => { // to fetch the user from the get by ID api
-    handleClose();
-    handleCloses();
+    // handleClose();
+    // handleCloses();
 
     if(state) {
       let data = await axios.get(
@@ -98,8 +121,8 @@ let Nav = () => {
   
   
   let fetchstatus = async () => {
-    handleClose();
-    handleCloses();
+    // handleClose();
+    // handleCloses();
     // console.log(state._id,'this is id')
     if(state) {
       var data = await axios.get(
@@ -153,10 +176,10 @@ let Nav = () => {
       });
       
       if (data.data && data.data.data) {
-        addToast("Notification has been update", {
-          appearance: "success",
-          autoDismiss: true,
-        });
+        // addToast("Notification has been update", {
+        //   appearance: "success",
+        //   autoDismiss: true,
+        // });
         fetchstatus();
       } else {
         addToast(data.data.message, { appearance: "error", autoDismiss: true });
@@ -187,14 +210,37 @@ let Nav = () => {
       fetchuser={fetchuser}
       />
 
-      <Ping
+      <Ping 
       handleCloses={handleCloses}
       // item={modalItems}   
       open={opens}   
       fetchuser={fetchuser}
       counts={counts}
   />
+ 
+        
 
+<div className="fcontainer">
+
+          <div className="f" >   <a href="#"> <CallIcon />-21324334</a></div>
+        <div className="fitem item1">    <a href="https://www.facebook.com/">
+          <FacebookIcon
+          />
+        </a></div>
+        <div className="fitem item1">  <a href="https://www.instagram.com">
+          <InstagramIcon
+         
+          />
+        </a></div>
+        <div className="fitem item3">  <a href="https://twitter.com/">
+     
+     <YouTubeIcon
+       
+     />
+   </a></div>
+       
+    </div>
+   
 
       <div className="navbar">
         {/* <GiHamburgerMenu className="burger"
@@ -302,11 +348,7 @@ let Nav = () => {
                                      
                                      </div>
                                      
-                                         
-                                  
-                                   
-                       
-                                     
+                                        
 
                                                <div className="ee">
                                             <td style={{fontSize:"9px"}}>{moment(e.createdAt).fromNow()}</td> 
@@ -359,7 +401,7 @@ let Nav = () => {
 
            {!state || !state.multiFactor || !state.multiFactor.user ? (
              <Link className="login-link" to="/login">
-               <div className="login-container">Login</div>
+               <div className="login-container">Login/Signup</div>
              </Link>
            ) : (
              <>

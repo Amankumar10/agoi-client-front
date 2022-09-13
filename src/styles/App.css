@@ -1,11 +1,14 @@
+
+
+
 :root{
-    --home-blue : rgba(23,25,63,1);
+    --home-gray : #202933;
     --home-heading-font-family : 'Nanum Gothic', sans-serif;
     --white-font : white;
     --ani-delay : 0s;
     --color-dark-grey : #63646F;
     --color-light-grey : hsl(234, 5%, 60%);
-    --defused-black : radial-gradient(ellipse at bottom,#292d61 30%,#171941 80%);;
+    --defused-black : radial-gradient(ellipse at bottom,rgba(23,31,42,255) 30%,  #202933 80%);
     --defused-green : #8ECB7E;
     --orange-font :rgb(225,131,119);
     --nav-blue-color : rgba(67, 138, 240,1);

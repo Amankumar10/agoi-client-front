@@ -1,7 +1,9 @@
 .investment-heading{
     width: 100%;
     height: 100px;
-    background: radial-gradient(ellipse at bottom,#292d61 30%,#171941 80%);
+    background: radial-gradient(ellipse at bottom,rgba(23,31,42,255) 30%,  #202933 80%);
+    /* background: rgb(39, 38, 38); */
+    /* background: #171941; */
     display: flex;
     justify-content: space-around;
     align-items: center;

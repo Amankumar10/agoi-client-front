@@ -15,7 +15,7 @@
     flex-direction: column;
     color: whitesmoke;
     padding: 0 6rem;
-    background:var(--home-blue);
+    background:var(--home-gray);
     background-blend-mode: soft-light;
 }
 

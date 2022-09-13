@@ -4,157 +4,32 @@
     left: 0;
     right: 0;
     height: 60px;
-    /* background: red; */
-
     background: var(--home-gray);
-    /* var(--darkgreyColor); */
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: white;
-
     font-size: 14px;
     z-index: 9999;
     transition: 300ms;
 }
 
-.yo{
-
-            
-        }
-
-        .navbars{
-            display: flex;
-            /* justify-content: center */
-            justify-self: end;
-            /* border-radius: 30px; */
-            /* border: 2px solid grey; */
-    background-color: rgba(23,31,42,255);
-
-            height: 6vh;
-          }
-
-          .navbars li{
-            float:left;
-            list-style: none; 
-            margin: 13px 20px;
-        }
+  /* overflow-y: scroll; */
+  /* overflow: auto; */
 
 
-        .navbars ul{
-            overflow: auto;
-        }
-
-
-
-        .navbars li a{
-            padding: 3px 3px;
-            text-decoration: none;
-            color: white;
-        }
-
-
-
-
-
-
-        .fcontainer{
-            /* border: 2px solid grey; */
-            height: 7vh;
-            display: flex;
-            /* flex-direction: column-reverse; */
-            /* justify-content: flex-end; */
-            /* justify-content: flex-start; */
-            justify-content: center;
-           background-color: rgba(23,31,42,255);
-           /* flex-grow: 1; */
-           padding-right: 134px;
-
-            /* align-items: center;
-            align-items: flex-end;
-            align-items: flex-start; */
-            /* flex-wrap: wrap; */
-            /* flex-wrap: wrap-reverse; */
-            /* flex-flow: column wrap; */
-            
-            
-        }
-
-        .f{
-            /* display: flex; */
-            /* justify-self: start; */
-    flex-grow: 1;
-    margin:12px;
-    padding-left: 134px;
-            /* padding-right: 730px; */
-        }
-        
-        .fitem{
-            /* background-color: red; */
-            /* border: 2px solid black; */
-            margin:12px;
-    /* flex-grow: 1; */
-
-            /* padding-left: 193vh; */
-            /* width: 122px; */
-            /* height: 122px; */
-        }
-        .search{
-            /* float: right; */
-            /* color: rgb(249, 242, 242); */
-            /* padding-left:125px; */
-            /* position: relative; */
-            /* right: 0; */
-            background-color: red;
-            border: 2px solid black;
-            margin:12px;
-            /* width: 122px; */
-            /* height: 122px; */
-        }
-
-
-
-        .navbars input{
-           
-            border-radius: 14px;
-            padding: 3px 17px;
-            width: 129px;
-        }
-
-
-.headers {
-    height: 55px;
-    display: flex;
-    align-items: center;
-    background-color: rgba(23,31,42,255);
- 
-    /* fontSize: 4px; */
-    /* position: sticky; */
-    /* z-index: 100; */
-  }
-
-.navba{
-  
-    /* height: 60px; */
-    background: rgba(32,41,51,255);
-   
-
-    /* var(--darkgreyColor); */
- 
- 
+.aam{
+    overflow: auto;
 }
-
-
-   
-    .dot {
-        height: 10px;
-        width: 10px;
-        margin-left:60px;
-        background-color: rgb(212, 19, 13);
-        border-radius: 50%;
-        /* sdfdf */
-        display: inline-block;
-      }
+.dot {
+       height: 10px;
+       width: 10px;
+       /* margin-left:60px; */
+       background-color: rgb(212, 19, 13);
+       border-radius: 50%;
+       /* sdfdf */
+       /* display: inline-block; */
+     }
 
 
 .gf{
@@ -177,8 +52,7 @@
     width: 23px;
     background-color: white;
     height: 3px;
-    margin: 2px 2px;
-    
+    margin: 2px 2px; 
 }
 
 
@@ -189,17 +63,31 @@
 .we{
     color: white;
     padding-left: 7%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 6%;
+    padding-bottom: 6%;
     grid-area: 31px;
    
 }
 
 
+
+.wte{
+    color: white;
+    /* text-decoration: underline; */
+    display:grid;
+    cursor: pointer;
+    overflow: auto;
+    /* overflow-y: auto; */
+    /* grid-column-gap: 3px; */
+    border: 0.4px solid black;
+   
+    /* text-decoration: underline; */
+}
+
 .ee{
     color: rgb(202, 197, 197);
     grid-area: 31px;
-
+    /* border: 0.8px solid black; */
 }
 
 .me{
@@ -240,14 +128,17 @@
     position: relative;
     /* margin-top: 24px; */
     display: inline-block;
-    padding-right: 23px;
-   
+    
+    /* padding-right: 23px; */
+    /* overflow-y: auto; */
    
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     cursor: pointer;
     display: none;
+   overflow-y: auto;
+
     color: #000;
     position: absolute;
     background-color: #a7a0a0;
@@ -258,14 +149,18 @@
 
 
 .dropdown-contents {
-   
-    display: none;
+    
+    /* display: none; */
+    /* overflow-y:  scroll; */
+    /* overflow: auto; */
     /* color: rgb(221, 12, 12); */
     position: absolute;
+    /* position: fixed; */
     background-color:#201f1f;
     min-width: 160px;
+    overflow-y: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 /* Links inside the dropdown */
@@ -274,6 +169,7 @@
     padding: 12px ;
     text-decoration: none;
     display: block;
+    
 }
 
 /* Change color of dropdown links on hover */
@@ -283,6 +179,7 @@
 
 .we:hover {background: rgb(46, 39, 39);}
 
+.wte:hover {background: rgb(46, 39, 39);}
 
 .me:hover {background: rgb(165, 33, 33);}
 
@@ -290,7 +187,7 @@
 .dropdown:hover .dropdown-content {display: block;color:rgb(22, 20, 20);}
 
 
-.dropdowns:hover .dropdown-contents {display: block;color:rgb(224, 49, 49);}
+.dropdowns:hover .dropdown-contents {color:rgb(224, 49, 49);}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 
@@ -406,7 +303,7 @@ a{
     background-color: #fa3e3e;
     border-radius: 2px;
     color: white;
-   
+    
     padding: 1px 3px;
     font-size: 10px;
     
@@ -415,10 +312,6 @@ a{
     right: 0;
   }
 
-
-  .yu{
-  /* float:right */
-  }
   .nButton {
     /* width: 1%; */
   
@@ -459,8 +352,9 @@ a{
     /* color: white;
     height: 100%;
     width: 100%;*/
-    /* overflow-y: scroll;  */
+    /* overflow: scroll;  */
     cursor: pointer;
+    /* overflow-y: auto; */
     color: white;
     background-color: rgb(29, 29, 31);
     /* border-bottom: 1px solid var(--color-light-grey); */
@@ -496,6 +390,7 @@ a{
     .h-nav-resp{
         height: 72px;
     }
+
     .v-class-resp{
        opacity: 0;
     } */

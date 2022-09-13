@@ -50,7 +50,7 @@ let Wallet = () => {
               <tbody>
                 <tr>
                   <td
-                    style={{ color: "white", textAlign: "center" }}
+                    style={{ color: "", textAlign: "center" }}
                     colSpan={4}
                   >
                     No Data Found
