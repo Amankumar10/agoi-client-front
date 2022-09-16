@@ -1,133 +1,186 @@
-import React from 'react'
-import Nav from "../Home/Nav/Nav";
-import "../../Components/Notify/Notify.css";
-import { useNavigate } from "react-router";
-import { useSelector } from "react-redux";
-import axios from "axios";
-import { BASE_URL } from "../../Constants/api_constants";
-import { useEffect, useState } from "react";
-import moment from "moment";
-import userEvent from "@testing-library/user-event";
-import Ping from './Ping';
+// import React from 'react'
+// import Nav from "../Home/Nav/Nav";
+// import "../../Components/Notify/Notify.css";
+// import { useNavigate } from "react-router";
+// import { useSelector } from "react-redux";
+// import axios from "axios";
+// import { BASE_URL } from "../../Constants/api_constants";
+// import { useEffect, useState } from "react";
+// import moment from "moment";
+// import userEvent from "@testing-library/user-event";
+// import Ping from './Ping';
+// import { hydrate } from 'react-dom';
+// import { fontSize } from '@mui/system';
+// import NotificationBadge from "react-notification-badge";
+// import { Effect } from "react-notification-badge";
 
 
 
-const Notify = () => {
+// const Notify = () => {
 
-    let navigate = useNavigate();
-  let [modalItems, setModalItems] = useState();
+  
+//   let [modalItems, setModalItems] = useState();
+//   const [count, setcount] = useState([])
+//   let state = useSelector((state) => state);
+//   let [open, setOpen] = useState(false);
+  
+  
+  
+  
+//   const [notification, setNotification] = useState([])
+//   const [user, setUser] = useState([])
+//   const  [check, setCheck] = useState(false);
 
-    let state = useSelector((state) => state);
-    let [open, setOpen] = useState(false);
-    let [modalItem, setModalItem] = useState();
-    // let [order, setOrder] = useState([]);
-    // const [cashout, setCashout] = useState([])
-    const [notification, setNotification] = useState([])
-    const [user, setUser] = useState([])
+//     let handleOpens = (item) => {
+//         setModalItems(item);
+//         setOpen(true);
+//         setCheck();
+//       };
 
-    let handleOpens = (item) => {
-        setModalItems(item);
-        setOpen(true);
-      };
-
+//     // var setCheck = () => {
+//     //  return  user.notification.length-1
+//     // };
+    
       
-  let handleClose = () => {
-    setOpen(false);
-  };
+//   let handleClose = () => {
+//     setOpen(false);
+//   };
       
       
-    let fetchnotify = async () => {
-        // handleClose();
-        if (state) {
-            let data = await axios.get(
-                `${BASE_URL}/user/${state._id}`
-            );
+//     let fetchnotify = async () => {
+//         // handleClose();
+//         if (state) {
+//             let data = await axios.get(
+//                 `${BASE_URL}/user/${state._id}`
+//             );
 
-            if (data && data.data && data.data.data) {
-                let response = data.data.data;
-                console.log(response);
-                setNotification(response);
-            }
-        }
-    };
+//             if (data && data.data && data.data.data) {
+//                 let response = data.data.data;
+//                 console.log(response);
+//                 setNotification(response);
+//                 setUser(response);
+//             }
+//         }
+//     };
 
 
-    useEffect(() => {
-        fetchnotify();
-    }, [state]);
+
+//     useEffect(() => {
+//         fetchnotify();
+//         // console.log(user.notification.length);
+        
+//     }, [state]);
 
 
     
-    return (
-        <>
-        <Ping
-        handleClose={handleClose}
-        item={modalItems}   
-        open={open}   
-        fetchnotify={fetchnotify}
-    />
+//     return (
+//         <>
+//         <Ping
+//         handleClose={handleClose}
+//         item={modalItems}   
+//         open={open}   
+//         fetchnotify={fetchnotify}
+//         count={count}
+//     />
+
+
+  
    
-        <div className="table-containers">
-          <table className="table">
-            <thead>
-              <tr>
-                {/* <th scope="row">Notify</th> */}
-               {/* {notification.notification.message} */}
-              
-              </tr>
-            </thead>
+//         <div className="table-containers">
+//           <table className="table">
+//             <thead>
+//               <tr>
+ 
+//                <div className="investment-item d-flex flex-column">
+//              <span style={{ fontSize:"24px" }}>
+//              Notifications
 
-            {
-                notification
-                    .length &&
-                    notification
-                        .length === 0 ? (
-                    ""
-                ) : (
-                    <tbody>
-                        {
-                            notification.notification
-                            &&
-                            notification.notification
-                                .map((e, index) => {
+//              </span>
+        
+//            </div>
+//               </tr>
+//             </thead>
 
-                                    return (
-                                        <>
-                                        {/* <div className="hello"> */}
-                                            {/* <tr key={index}> */}
-                                            <tr>
-                                 
-                                         {/* <th scope="row">{index+1}</th> */}
+//             {/* {check && } */}
+      
+//             {
+//                 notification.
+//                     length &&
+//                    notification.
+//                         length === 0 ? (
+//                     "No New Notification"
+//                 ) : (
+//                     <tbody>
+//                         {
+//                             notification.notification
+//                             &&
+//                             notification.notification
+//                                 .map((e, index) => {
+
+//                                     return (
+//                                         <>
+                                    
+//                                             <tr key={index}>
                                      
-                      <div className="we">
-                      
-                  
-                                               <td onClick={() => handleOpens()}>{e.message}</td> 
-                                               </div>
+//                                             <div className="we">
+            
+                          
+                                               
+                                              
+//                                             <td onClick={() => {handleOpens(setcount(e.message))}}>{e.message}</td> 
+          
+
+
+                                               
+//                                                </div>
                                        
-                                            </tr>
+//                                                </tr>
                           
                                             
-                                        </>
-                                    );
-                                })}
-                    </tbody>
-                )}
+//                                         </>
+//                                     );
+//                                 })}
+//                     </tbody>
+//                 )}
 
-</table>
+// </table>
                 
                  
               
     
-      </div>
+//       </div>
 
 
       
 
-</>
+// </>
 
 
-    )
-}
+//     )
+// }
 
-export default Notify
+// export default Notify
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

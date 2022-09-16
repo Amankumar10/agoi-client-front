@@ -1,39 +1,104 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
+//  import "../../../Components/Notify/Noftify.css";
+import { Box, Button, makeStyles, Typography, Badge } from "@material-ui/core";
+
 import { auth } from "../../../firebase/firebase";
 import "../../../styles/Home/Nav/Nav.css";
 import Sell from "../../Investment/Sell";
-// import Ping from "../../Notify/Ping"
-import Notify from "../../Notify/Notify";
+import Ping from "../../Notify/Ping"
+import { useToasts } from "react-toast-notifications";
+
 import { BASE_URL } from "../../../Constants/api_constants";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from 'react-icons/gi'
+import NotificationBadge from "react-notification-badge";
+import { Effect } from "react-notification-badge";
+import { useReducer } from "react";
+import moment from "moment";
+import { blueGrey } from "@mui/material/colors";
 
+
+import React from "react";
+
+
+import FacebookIcon from "@mui/icons-material/Facebook";
+// import SearchIcon from "@material-ui/Search";
+import { SearchOutlined } from "@mui/icons-material";
+// import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+// import { Link } from "react-router-dom";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import SearchIcon from "@mui/icons-material/Search";
+import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
+import CallIcon from "@mui/icons-material/Call";
+
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import PersonIcon from "@mui/icons-material/Person";
 
 
 let Nav = () => {
 
+  // const reducer = (state,action) => {
+  //   switch()
+  // }
+
+// var started
+  const [user, setUser] = useState([])
+  let { addToast } = useToasts();
   let [open, setOpen] = useState(false);
+  let [opens, setOpens] = useState(false);
+  let  [check, setCheck] = useState(false);
+  const [totalseen, setTotalseen] = useState();
   let [modalItem, setModalItem] = useState();
+  const [counts, setcounts] = useState([])
+  // const [first, setFirst] = useState(true)
+  let [notification, setNotification] = useState([])
+  const [usernotifications, setuserNotifications] = useState([])
   let [modalItems, setModalItems] = useState();
-
   let [orders, setOrders] = useState([]);
+  const [status, setStatus] = useState();
+  //var ends
+ 
 
-  let state = useSelector((state) => state);
-  // console.log(state);
+  let state = useSelector((state) => state); // fectching user data from redux store
+  const [isActive, setIsActive] = useState(false);
   let signoutHandler = async () => {
-    await auth.signOut();
+    await auth.signOut();  // calling auth singout to logout the user
+  };
+
+  let handleOpen = (item) => {  // it open the cashout input box
+    setModalItem(item);
+    setOpen(true);              //use state
+  };
+
+  let handleClose = () => {     // close the
+    setOpen(false);
   };
 
 
+  
 
+  let handleOpens = (e) => {   // it open the notification input box
+    // setModalItems(items);
+    // items.preventDefault();
+    // jh();
+    setOpens(true);
+  };
 
+  let handleCloses = () => {  
+    setOpens(false);
+  };
 
-  let fetchuser = async () => {
-    handleClose();
-    if (state) {
+  let fetchuser = async () => { // to fetch the user from the get by ID api
+    // handleClose();
+    // handleCloses();
+
+    if(state) {
       let data = await axios.get(
         `${BASE_URL}/user/${state._id}`
       );
@@ -41,64 +106,170 @@ let Nav = () => {
         let response = data.data.data;
         console.log(response);
         setOrders(response);
+        setUser(response);
+        // setNotification(response);
+        // setStatus(response);
+
         // console.log(orders);
       }
     }
   };
 
+  // console.log(usernotifications.data._id);
 
-  let handleOpen = (item) => {
-    setModalItem(item);
-    setOpen(true);
+
+  
+  
+  let fetchstatus = async () => {
+    // handleClose();
+    // handleCloses();
+    // console.log(state._id,'this is id')
+    if(state) {
+      var data = await axios.get(
+        `${BASE_URL}/user/user-notification/${state._id}`); // user id 
+        
+        
+        console.log(data);
+        var notifyid = (data.data.data);
+      
+          notifyid.forEach(element => {
+            console.log(element);
+            console.log(element._id);
+          });
+   
+
+
+
+
+      if (data.data && data.data.data) {
+        let response = data.data;
+        console.log(response);
+       
+        // setOrders(response);
+        // setUser(response);
+        setuserNotifications(response)
+        setStatus(response);
+      }
+    }
   };
 
 
 
 
-  let handleClose = () => {
-    setOpen(false);
+
+
+
+
+
+
+
+  let handleRead = async (event,nID) => {
+    try {
+     
+
+
+      let data = await axios.post(BASE_URL + `/user/user-notification/${nID}`, {
+  status:true,
+       
+    
+        
+      });
+      
+      if (data.data && data.data.data) {
+        // addToast("Notification has been update", {
+        //   appearance: "success",
+        //   autoDismiss: true,
+        // });
+        fetchstatus();
+      } else {
+        addToast(data.data.message, { appearance: "error", autoDismiss: true });
+      }
+    } catch (e) {
+      console.log(e);
+      addToast("error occurred", { appearance: "error", autoDismiss: true });
+    }
+    
   };
+
+
 
   useEffect(() => {
     fetchuser();
-        
-  }, [state]);
+    fetchstatus();
+    // console.log(state._id)
 
+  }, [state]);
+  
   return (
     <>
-      <Sell
-        handleClose={handleClose}
-        item={modalItem}
-        walletBalance={orders.wallet_balance} 
-        open={open}
-        fetchuser={fetchuser}
+    <Sell
+      handleClose={handleClose}
+      item={modalItem}
+      walletBalance={orders.wallet_balance} 
+      open={open}
+      fetchuser={fetchuser}
       />
 
-    {/*  */}
+      <Ping 
+      handleCloses={handleCloses}
+      // item={modalItems}   
+      open={opens}   
+      fetchuser={fetchuser}
+      counts={counts}
+  />
+ 
+        
 
-      
+<div className="fcontainer">
+
+          <div className="f" >   <a href="#"> <CallIcon />-21324334</a></div>
+        <div className="fitem item1">    <a href="https://www.facebook.com/">
+          <FacebookIcon
+          />
+        </a></div>
+        <div className="fitem item1">  <a href="https://www.instagram.com">
+          <InstagramIcon
+         
+          />
+        </a></div>
+        <div className="fitem item3">  <a href="https://twitter.com/">
+     
+     <YouTubeIcon
+       
+     />
+   </a></div>
+       
+    </div>
+   
+
       <div className="navbar">
-        <GiHamburgerMenu className="burger"
-          onClick={() => setOpen(!open)} />
+        {/* <GiHamburgerMenu className="burger"
+          onClick={() => setOpen(!open)} /> */}
         <div className="logo">
           <p>
             <Link to={"/"}>Agoi Financial Services</Link>
+            {/* {state.usernotifications.user_id} */}
             {/* &#8377; {state.wallet_balance} */}
           </p>         
 
         </div>
+
+
+        {!state || !state.multiFactor || !state.multiFactor.user ? (
+          ""
+        ) : (
+          <>
             <div className="links v-class-resp h-nav-resp">
               <Link to="/stocks">Discover</Link>
               <Link to={"/investment"}>Investments</Link>
               
               <a href="#">Resources</a>
 
-              
 
               <div className="dropdown">
-                {/* <div className="wallet-container"> */}
+               
                 <div className="cor" >
-                {/* <button className="dropbtn"></button> */}
+               
                   <span className="material-symbols-outlined">Wallet</span>
                   <div className="dropdown-content">
                     <div
@@ -113,33 +284,108 @@ let Nav = () => {
 
 
                     <Link to={"/Cashouthistory"}>Cashout History</Link>
-                  </div></div></div> </div>
-      
+                  </div>
+                    </div>
+                    {/* {console.log()} */}
+                    </div>
+                       </div>     
+       
 
 
-               
-                  <div className="dropdowns">
-                {/* <div className="wallet-container"> */}
+   
+            <div className="dropdowns">
+            <div className="button">
                 
                
-                <span style={{fontSize:"28px"}} className="material-symbols-outlined">notifications</span>
-
+                  {/* <span  className="button__badge"> {usernotifications.unseenTotal}</span> */}
+                <NotificationBadge count={usernotifications.unseenTotal}       effect={Effect.SCALE} />
+                <span style={{fontSize:"28px"}}  className="material-symbols-outlined">notifications</span>
+                {/* onClick={() => setCheck(!check)} */}
                   <div className="dropdown-contents">
-                    {/* <div className="me"></div> */}
-                
-                    <Notify/>
+      
+           <div className="table-containers">
+             <table className="table">
+            <thead>
+              <tr>
+ 
+               <div className="investment-item d-flex flex-column">
+             <span style={{ fontSize:"24px" }}>
+             Notifications
+
+             </span>
+        
+           </div>
+              </tr>
+            </thead>
+
+           
+      
+            {
+                  usernotifications.
+                        length === 0 ? (
+                    "No New Notification"
+                ) : (
+                    <tbody>
+ 
+                        {usernotifications.data.slice().reverse()
+                                .map((e) => {
+
+                                    return (
+                                        <>
+                                    
+                                      <tr >
+                                     
+                                      <div className="we">
+                                   
+
+                                    
+                                    
+                                  
+                                     
+                                     
+                                     <div onClick={event => handleRead(event,e._id)} ><td onClick={() => {handleOpens(setcounts(e.message) )}}>{e.message}</td> 
+                                      <td >{e.status ? "" :  <div className="dot" ></div> }</td> 
+                                     
+                                     </div>
+                                     
+                                        
+
+                                               <div className="ee">
+                                            <td style={{fontSize:"9px"}}>{moment(e.createdAt).fromNow()}</td> 
+                            
+                                            </div>
+                                               </div>
+                                               </tr>
+                          
+                                            
+                                        </>
+                                    );
+                                })}
+                    </tbody>
+                )}
+            
+</table>
+ 
+      </div>
+  
              </div>
+             </div>
+
             </div>
 
-                     
-        <div className="login">
+            </>
+        )} 
 
+        
+        
 
-
-         
-          
+    <div className="login">
+          {!state || !state.multiFactor || !state.multiFactor.user ? (
+            ""
+          ) : (
+            <>       
               <div className="wallet">
-                {/* <Link to={"/wallet"}> */}
+             
                 <div className="wallet-container">
                   <span
                     style={{ cursor: "pointer" }}
@@ -147,14 +393,15 @@ let Nav = () => {
                   >
                     person
                   </span>{" "}
-                </div>
-                {/* </Link> */}
               </div>     
-          
-                   
+                </div>              
+              </>
+        )} 
+
+
            {!state || !state.multiFactor || !state.multiFactor.user ? (
              <Link className="login-link" to="/login">
-               <div className="login-container">Login</div>
+               <div className="login-container">Login/Signup</div>
              </Link>
            ) : (
              <>
@@ -164,7 +411,9 @@ let Nav = () => {
              </>
            )}
          </div>
-       </div>
+         </div> 
+            
+
      </>
    );
  };

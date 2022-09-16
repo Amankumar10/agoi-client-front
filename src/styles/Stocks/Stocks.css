@@ -1,7 +1,8 @@
 .stocks-heading{
     width: 100%;
     height: 100px;
-    background: var(--defused-black);
+    background: radial-gradient(ellipse at bottom,rgba(23,31,42,255) 30%,  #202933 80%);
+
     display: flex;
     justify-content: space-around;
     align-items: center;

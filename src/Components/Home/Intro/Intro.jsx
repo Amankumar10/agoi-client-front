@@ -5,6 +5,7 @@ import "../../../styles/Home/Intro/Intro.css";
 import InfoCardModal from "./InfoCardModal";
 import ReferralCardModal from "./ReferralModel";
 import Slider from "./Slider";
+// import Photo from "../../../../public/"
 
 let Intro = () => {
   let state = useSelector((state) => state);
@@ -23,6 +24,8 @@ let Intro = () => {
   };
   console.log(state);
 
+  
+
   return (
     <>
       <ReferralCardModal
@@ -30,32 +33,43 @@ let Intro = () => {
         open={openReferral}
       />
       <InfoCardModal handleClose={handleClose} open={open} />
-      {/* {state.wallet_balance} */}
+
       {/* <div className="home-notice">You are not varified by Admin Yet</div> */}
       <div className="landing-page">
-        <div className="con1">
-          <div className="con1-heading">
-            <p>
-            {/* <Link to={"/wallet"}>cashout</Link> */}
-  {/* &#8377; {state.wallet_balance} */}
-
-              Invest in India's leading
+         <div className="con1">
+        <img
+        className="im"
+     src="https://blogs.idc.com/wp-content/uploads/2022/07/pexels-artem-podrez-5716016-3.jpg"
+  />
+   <div className="bottom-left">  <p>
+              Invest in India's
+               leading
+              private
               <br />
-              private growth companies
-            </p>
-           
-          </div>
+               growth companies
+            </p></div>
+
+
+
+      
           <div className="heading-btns">
-            {/* <button className="res-btn">Explore Stocks</button> */}
-            {state && state.multiFactor && state.multiFactor.user ? (
-              <button onClick={() => navigate("/stocks")} className="acc-btn">
-                Explore Stocks
+           
+    
+            <button onClick={() => navigate("/login")} className="acc-btn">
+               Start Now
               </button>
-            ) : (
-              ""
-            )}
           </div>
-        </div>
+        </div> 
+
+{/* <div className="container">
+  <img  className="im" src="https://blogs.idc.com/wp-content/uploads/2022/07/pexels-artem-podrez-5716016-3.jpg" />
+  <div className="bottom-left">Bottom Left</div>
+  <div className="top-left">Top Left</div>
+  <div className="top-right">Top Right</div>
+  <div className="bottom-right">Bottom Right</div>
+  <div className="centered">Centered</div>
+</div> */}
+
         <div className="section section-basic-components">
           <div className="row">
             <div className="ml-auto mr-auto col-md-7 col-lg-5">
@@ -83,43 +97,61 @@ let Intro = () => {
             </div>
           </div>
         </div>
-        {/* <div className="video-container">
-          <h1>User into a new era of private investments.</h1>
-          <div className="vid-cont">
-            <video
-              src="https://chace-pe-assets.s3.us-east-2.amazonaws.com/Agoi Financial Services/videos/Agoi Financial Services+Ad+Compressed.mp4"
-              preload="auto"
-              muted
-              autoPlay={true}
-              controls=""
-              style={{ width: "100%", height: "100%" }}
-              playsInline=""
-              webkit-playsinline=""
-              x5-playsinline=""
-            ></video>
-          </div>
-        </div> */}
+        <div className="df"><h2>Available Stocks</h2>
+
+
+        </div>
+        <div className="home-footers">
+
+        </div>
+       
         <Slider />
 
-        {/* <div className="info-container">
-          <h1>User into a new era of private investments.</h1>
-          <div className="cards-container">
-            <div onClick={handleOpen} className="info-card">
-              <h1>Why</h1>
-              <div className="add-btn">+</div>
-            </div>
-            <div onClick={handleOpen} className="info-card">
-              <h1>What</h1> <div className="add-btn">+</div>
-            </div>
-            <div onClick={handleOpen} className="info-card">
-              <h1>How</h1> <div className="add-btn">+</div>
-            </div>
-            <div onClick={handleOpen} className="info-card">
-              <h1>Legal</h1> <div className="add-btn">+</div>
-            </div>
-          </div>
-        </div> */}
-        <div className="d-flex justify-content-center align-items-center start-investment-cont">
+       
+
+
+
+{/* 
+<div className="df"><h2>Our Best 
+  Workers </h2>
+  
+</div>
+  <div className="home-footers">
+
+
+  
+</div>
+
+
+  <div className="con3">
+      <img
+        className="ima"
+     src="https://images-cdn.9gag.com/images/thumbnail-facebook/27361130_1469416860.0675_aZE6yP_n.jpg"
+     />
+  
+    
+<img
+        className="ima"
+     src="  https://fashionista.com/.image/t_share/MTMwNjM1MTYxMjkyMjk0MTU0/rob-lowe-image-2jpg.jpg
+     "
+  />
+
+  </div> */}
+
+
+
+
+
+
+        <div className="home-footers">
+
+
+        </div>
+        <div className=" start-investment-cont">
+
+
+          
+          
           <div className="col-6">
             <h3>Thanks for visiting us</h3>
             <p>Let's get in touch with us on any of these properties.</p>
@@ -137,10 +169,19 @@ let Intro = () => {
           </div>
         </div>
         <div className="d-flex flex-column justify-content-center align-items-center referral-container">
+
+          {!state || !state.multiFactor || !state.multiFactor.user ? (
+          ""
+        ) : (
+          <>
           <div className="col-12 d-flex justify-content-center align-items-center">
             <p>Refer a Friend</p>
           </div>
-          <div className="referral-code-container-home">{state ? state.referral_code : ""}</div>
+          <div className="referral-code-container-home">{state.referral_code }</div>
+          </>
+
+        )}
+
         </div>
         <div className="home-footer">
           <div className="copyright-cont">

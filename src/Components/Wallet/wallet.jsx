@@ -36,6 +36,8 @@ let Wallet = () => {
         <table className="table mt-3">
           <thead>
             <tr>
+             <p style={{ color: "var(--white-font)" }}>{referrals.length}</p>
+
               <th scope="col">Sender</th>
               <th scope="col">Date</th>
               <th scope="col">Purchase</th>
@@ -48,7 +50,7 @@ let Wallet = () => {
               <tbody>
                 <tr>
                   <td
-                    style={{ color: "white", textAlign: "center" }}
+                    style={{ color: "", textAlign: "center" }}
                     colSpan={4}
                   >
                     No Data Found

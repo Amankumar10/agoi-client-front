@@ -19,7 +19,7 @@ import CompleteProfile from "./Components/CompleteKYC/CompleteProfile";
 import axios from "axios";
 import { BASE_URL } from "./Constants/api_constants";
 import GetOrderResponse from "./Components/Stocks/GetOrderResponse";
-import Wallet from "./Components/Wallet/wallet";
+import Wallet from "./Components/Wallet/Wallet";
 import Notify from "./Components/Notify/Notify";
 import Cashouthistory from "./Components/CashoutHistory/Cashouthistory"
 

@@ -11,6 +11,11 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols" rel="stylesheet" />
+    <link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +32,7 @@
     body{
       margin: 0;
       padding: 0;
-      background  :rgba(23,25,63,1)
+      background  :#202933
     }
     
   </style>
@@ -40,7 +45,7 @@
         let lastKnownScrollPosition = window.scrollY;
         let nav = document.querySelector(".navbar")
         if(lastKnownScrollPosition>100){
-          nav.style.background = "var(--nav-blue-color)"
+          nav.style.background = "rgba(23,31,42,255)"
           nav.style.color = "white"
         }else{
           nav.style.background = "var(--home-blue)"
