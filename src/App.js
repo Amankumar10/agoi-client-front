@@ -67,10 +67,6 @@ let App = () => {
             <Route path="/investment" element={<Investment />} />
             <Route path="/Cashouthistory" element={<Cashouthistory />} />
             <Route path="/Notify" element={<Notify />} />
-
-         
-
-
             <Route path="/addaccount" element={<AddAccountNumber />} />
             <Route path="/demat" element={<DematStepOne />} />
             <Route path="/login" element={<Login />} />
