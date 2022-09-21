@@ -125,12 +125,12 @@ let Nav = () => {
     // handleCloses();
     // console.log(state._id,'this is id')
     if(state) {
-      var data = await axios.get(
+      const data = await axios.get(
         `${BASE_URL}/user/user-notification/${state._id}`); // user id 
         
         
         console.log(data);
-        var notifyid = (data.data.data);
+        const notifyid = (data.data.data);
       
           notifyid.forEach(element => {
             console.log(element);
