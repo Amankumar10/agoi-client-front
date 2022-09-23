@@ -286,7 +286,7 @@ let Nav = () => {
                 
                
                  
-                <NotificationBadge count={usernotifications.unseenTotal}       effect={Effect.SCALE} />
+                {/* <NotificationBadge count={usernotifications.unseenTotal}       effect={Effect.SCALE} /> */}
                 <span style={{fontSize:"28px"}}  className="material-symbols-outlined">notifications</span>
            
                   <div className="dropdown-contents">
@@ -308,7 +308,7 @@ let Nav = () => {
 
            
       
-            {
+            {/* {
                   usernotifications.
                         length === 0 ? (
                     "No New Notification"
@@ -321,20 +321,20 @@ let Nav = () => {
                                     return (
                                         <>
                                     
-                                      <tr >
+                                      <tr > */}
                                      
-                                      <div className="we">
+                                      {/* <div className="we">
                                    
 
                                     
                                     
                                   
                                      
-{/*                                      
+                                     
                                      <div onClick={event => handleRead(event,e._id)} ><td onClick={() => {handleOpens(setcounts(e.message) )}}>{e.message}</td> 
                                       <td >{e.status ? "" :  <div className="dot" ></div> }</td> 
                                      
-                                     </div> */}
+                                     </div>
                                      
                                         
 
@@ -342,15 +342,15 @@ let Nav = () => {
                                             <td style={{fontSize:"9px"}}>{moment(e.createdAt).fromNow()}</td> 
                             
                                             </div>
-                                               </div>
-                                               </tr>
+                                               </div> */}
+                                               {/* </tr> */}
                           
                                             
-                                        </>
+                                        {/* </>
                                     );
                                 })}
                     </tbody>
-                )}
+                )} */}
             
 </table>
  
