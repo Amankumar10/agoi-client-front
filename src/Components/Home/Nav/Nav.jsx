@@ -94,26 +94,22 @@ let Nav = () => {
     setOpens(false);
   };
 
-  let fetchuser = async () => { // to fetch the user from the get by ID api
-    // handleClose();
-    // handleCloses();
+  // let fetchuser = async () => { // to fetch the user from the get by ID api
+ 
 
-    if(state) {
-      let data = await axios.get(
-        `${BASE_URL}/user/${state._id}`
-      );
-      if (data.data && data.data.data) {
-        let response = data.data.data;
-        console.log(response);
-        setOrders(response);
-        setUser(response);
-        // setNotification(response);
-        // setStatus(response);
-
-        // console.log(orders);
-      }
-    }
-  };
+  //   if(state) {
+  //     let data = await axios.get(
+  //       `${BASE_URL}/user/${state._id}`
+  //     );
+  //     if (data.data && data.data.data) {
+  //       let response = data.data.data;
+  //       console.log(response);
+  //       setOrders(response);
+  //       setUser(response);
+       
+  //     }
+  //   }
+  // };
 
   // console.log(usernotifications.data._id);
 
@@ -186,7 +182,7 @@ let Nav = () => {
 
 
   useEffect(() => {
-    fetchuser();
+    // fetchuser();
     // fetchstatus();
    
 
@@ -199,14 +195,14 @@ let Nav = () => {
       item={modalItem}
       walletBalance={orders.wallet_balance} 
       open={open}
-      fetchuser={fetchuser}
+      // fetchuser={fetchuser}
       />
 
       <Ping 
       handleCloses={handleCloses}
       // item={modalItems}   
       open={opens}   
-      fetchuser={fetchuser}
+      // fetchuser={fetchuser}
       counts={counts}
   />
  
