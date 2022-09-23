@@ -1,44 +1,38 @@
 import { useSelector } from "react-redux";
-// import { Navigate } from "react-router";
-import { Link } from "react-router-dom";
-//  import "../../../Components/Notify/Noftify.css";
-// import { Box, Button, makeStyles, Typography, Badge } from "@material-ui/core";
 
-// import { auth } from "../../../firebase/firebase";
+import { Link } from "react-router-dom";
+
+
+
+import { auth } from "../../../firebase/firebase";
 import "../../../styles/Home/Nav/Nav.css";
 import Sell from "../../Investment/Sell";
 import Ping from "../../Notify/Ping"
-// import { useToasts } from "react-toast-notifications";
+import { useToasts } from "react-toast-notifications";
 
-// import { BASE_URL } from "../../../Constants/api_constants";
-// import axios from "axios";
-// import { useEffect, useState } from "react";
-// import { GiHamburgerMenu } from 'react-icons/gi'
-// import NotificationBadge from "react-notification-badge";
-// import { Effect } from "react-notification-badge";
-// import { useReducer } from "react";
-// import moment from "moment";
-// import { blueGrey } from "@mui/material/colors";
+import { BASE_URL } from "../../../Constants/api_constants";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+import NotificationBadge from "react-notification-badge";
+import { Effect } from "react-notification-badge";
+
+import moment from "moment";
 
 
 import React from "react";
 
 
 import FacebookIcon from "@mui/icons-material/Facebook";
-// import SearchIcon from "@material-ui/Search";
-// import { SearchOutlined } from "@mui/icons-material";
+
 // import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 // import { Link } from "react-router-dom";
-// import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+
 import InstagramIcon from "@mui/icons-material/Instagram";
-// import SearchIcon from "@mui/icons-material/Search";
-// import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
+
 import CallIcon from "@mui/icons-material/Call";
 
-// import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-// import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-// import PersonIcon from "@mui/icons-material/Person";
 
 
 let Nav = () => {
@@ -48,103 +42,110 @@ let Nav = () => {
   // }
 
 // var started
-  // const [user, setUser] = useState([])
-  // let { addToast } = useToasts();
-  // let [open, setOpen] = useState(false);
-  // let [opens, setOpens] = useState(false);
-  // let  [check, setCheck] = useState(false);
-  // let [totalseen, setTotalseen] = useState();
-  // let [modalItem, setModalItem] = useState();
-//  let [counts, setcounts] = useState([])
+  const [user, setUser] = useState([])
+  let { addToast } = useToasts();
+  let [open, setOpen] = useState(false);
+  let [opens, setOpens] = useState(false);
+  let  [check, setCheck] = useState(false);
+  const [totalseen, setTotalseen] = useState();
+  let [modalItem, setModalItem] = useState();
+  const [counts, setcounts] = useState([])
   // const [first, setFirst] = useState(true)
-  // let [notification, setNotification] = useState([])
-  // const [usernotifications, setuserNotifications] = useState([])
-  // let [modalItems, setModalItems] = useState();
-  // let [orders, setOrders] = useState([]);
-  // const [status, setStatus] = useState();
+  let [notification, setNotification] = useState([])
+  const [usernotifications, setuserNotifications] = useState([])
+  let [modalItems, setModalItems] = useState();
+  let [orders, setOrders] = useState([]);
+  const [status, setStatus] = useState();
   //var ends
-
  
 
   let state = useSelector((state) => state); // fectching user data from redux store
+  const [isActive, setIsActive] = useState(false);
+  let signoutHandler = async () => {
+    await auth.signOut();  // calling auth singout to logout the user
+  };
 
-  // let signoutHandler = async () => {
-  //   await auth.signOut();  // calling auth singout to logout the user
-  // };
+  let handleOpen = (item) => {  // it open the cashout input box
+    setModalItem(item);
+    setOpen(true);              //use state
+  };
 
-  // let handleOpen = (item) => {  // it open the cashout input box
-  //   setModalItem(item);
-  //   setOpen(true);              //use state
-  // };
-
-  // let handleClose = () => {     // close the
-  //   setOpen(false);
-  // };
+  let handleClose = () => {     // close the
+    setOpen(false);
+  };
 
 
   
 
-  // let handleOpens = (e) => {   // it open the notification input box
+  let handleOpens = (e) => {   // it open the notification input box
     // setModalItems(items);
     // items.preventDefault();
     // jh();
-  //   setOpens(true);
-  // };
+    setOpens(true);
+  };
 
-  // let handleCloses = () => {  
-  //   setOpens(false);
-  // };
+  let handleCloses = () => {  
+    setOpens(false);
+  };
 
-  // let fetchuser = async () => { // to fetch the user from the get by ID api
- 
+  let fetchuser = async () => { // to fetch the user from the get by ID api
+    // handleClose();
+    // handleCloses();
 
-  //   if(state) {
-  //     let data = await axios.get(
-  //       `${BASE_URL}/user/${state._id}`
-  //     );
-  //     if (data.data && data.data.data) {
-  //       let response = data.data.data;
-  //       console.log(response);
-  //       setOrders(response);
-  //       setUser(response);
-       
-  //     }
-  //   }
-  // };
+    if(state) {
+      let data = await axios.get(
+        `${BASE_URL}/user/${state._id}`
+      );
+      if (data.data && data.data.data) {
+        let response = data.data.data;
+        console.log(response);
+        setOrders(response);
+        setUser(response);
+        // setNotification(response);
+        // setStatus(response);
+
+        // console.log(orders);
+      }
+    }
+  };
 
   // console.log(usernotifications.data._id);
 
 
   
   
-  // let fetchstatus = async () => {
- 
-  //   if(state) {
-  //     const data = await axios.get(
-  //       `${BASE_URL}/user/user-notification/${state._id}`); // user id 
+  let fetchstatus = async () => {
+    // handleClose();
+    // handleCloses();
+    // console.log(state._id,'this is id')
+    if(state) {
+      const data = await axios.get(
+        `${BASE_URL}/user/user-notification/${state._id}`); // user id 
         
         
-  //       console.log(data);
-  //       const notifyid = (data.data.data);
+        console.log(data);
+        const notifyid = (data.data.data);
       
-  //         notifyid.forEach(element => {
-  //           console.log(element);
-  //           console.log(element._id);
-  //         });
+          notifyid.forEach(element => {
+            console.log(element);
+            console.log(element._id);
+          });
    
 
 
 
 
-  //     if (data.data && data.data.data) {
-  //       let response = data.data;
-  //       console.log(response);
-   
-  //       setuserNotifications(response)
-  //       setStatus(response);
-  //     }
-  //   }
-  // };
+      if (data.data && data.data.data) {
+        let response = data.data;
+        console.log(response);
+       
+        // setOrders(response);
+        // setUser(response);
+        setuserNotifications(response)
+        setStatus(response);
+      }
+    }
+  };
 
 
 
@@ -156,55 +157,59 @@ let Nav = () => {
 
 
 
-  // let handleRead = async (event,nID) => {
-  //   try {
+  let handleRead = async (event,nID) => {
+    try {
      
 
 
-  //     let data = await axios.post(BASE_URL + `/user/user-notification/${nID}`, {
-  // status:true,
+      let data = await axios.post(BASE_URL + `/user/user-notification/${nID}`, {
+  status:true,
        
     
         
-  //     });
+      });
       
-  //     if (data.data && data.data.data) {  
-  //       // fetchstatus();
-  //     } else {
-  //       addToast(data.data.message, { appearance: "error", autoDismiss: true });
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //     addToast("error occurred", { appearance: "error", autoDismiss: true });
-  //   }
+      if (data.data && data.data.data) {
+        // addToast("Notification has been update", {
+        //   appearance: "success",
+        //   autoDismiss: true,
+        // });
+        fetchstatus();
+      } else {
+        addToast(data.data.message, { appearance: "error", autoDismiss: true });
+      }
+    } catch (e) {
+      console.log(e);
+      addToast("error occurred", { appearance: "error", autoDismiss: true });
+    }
     
-  // };
+  };
 
 
 
-  // useEffect(() => {
-    // fetchuser();
-    // fetchstatus();
-   
+  useEffect(() => {
+    fetchuser();
+    fetchstatus();
+    // console.log(state._id)
 
-  // }, [state]);
+  }, [state]);
   
   return (
     <>
     <Sell
-      // handleClose={handleClose}
-      // item={modalItem}
-      // walletBalance={orders.wallet_balance} 
-      // open={open}
-      // fetchuser={fetchuser}
+      handleClose={handleClose}
+      item={modalItem}
+      walletBalance={orders.wallet_balance} 
+      open={open}
+      fetchuser={fetchuser}
       />
 
       <Ping 
-      // handleCloses={handleCloses}
+      handleCloses={handleCloses}
       // item={modalItems}   
-      // open={opens}   
-      // fetchuser={fetchuser}
-      // counts={counts}
+      open={opens}   
+      fetchuser={fetchuser}
+      counts={counts}
   />
  
         
@@ -232,12 +237,13 @@ let Nav = () => {
    
 
       <div className="navbar">
-       
+        {/* <GiHamburgerMenu className="burger"
+          onClick={() => setOpen(!open)} /> */}
         <div className="logo">
           <p>
             <Link to={"/"}>Agoi Financial Services</Link>
-         
-          
+            {/* {state.usernotifications.user_id} */}
+            {/* &#8377; {state.wallet_balance} */}
           </p>         
 
         </div>
@@ -260,12 +266,12 @@ let Nav = () => {
                
                   <span className="material-symbols-outlined">Wallet</span>
                   <div className="dropdown-content">
-                    {/* <div
+                    <div
                       onClick={() => handleOpen()}
                       className="we"
                     >
                       Cashout =       &#8377; {orders.wallet_balance}
-                    </div>  */}
+                    </div> 
                     <Link to={"/wallet"}>Referral History</Link>
                    
                    
@@ -274,7 +280,7 @@ let Nav = () => {
                     <Link to={"/Cashouthistory"}>Cashout History</Link>
                   </div>
                     </div>
-                 
+                    {/* {console.log()} */}
                     </div>
                        </div>     
        
@@ -285,10 +291,10 @@ let Nav = () => {
             <div className="button">
                 
                
-                 
-                {/* <NotificationBadge count={usernotifications.unseenTotal}       effect={Effect.SCALE} /> */}
+                  {/* <span  className="button__badge"> {usernotifications.unseenTotal}</span> */}
+                <NotificationBadge count={usernotifications.unseenTotal}       effect={Effect.SCALE} />
                 <span style={{fontSize:"28px"}}  className="material-symbols-outlined">notifications</span>
-           
+                {/* onClick={() => setCheck(!check)} */}
                   <div className="dropdown-contents">
       
            <div className="table-containers">
@@ -308,7 +314,7 @@ let Nav = () => {
 
            
       
-            {/* {
+            {
                   usernotifications.
                         length === 0 ? (
                     "No New Notification"
@@ -321,9 +327,9 @@ let Nav = () => {
                                     return (
                                         <>
                                     
-                                      <tr > */}
+                                      <tr >
                                      
-                                      {/* <div className="we">
+                                      <div className="we">
                                    
 
                                     
@@ -342,15 +348,15 @@ let Nav = () => {
                                             <td style={{fontSize:"9px"}}>{moment(e.createdAt).fromNow()}</td> 
                             
                                             </div>
-                                               </div> */}
-                                               {/* </tr> */}
+                                               </div>
+                                               </tr>
                           
                                             
-                                        {/* </>
+                                        </>
                                     );
                                 })}
                     </tbody>
-                )} */}
+                )}
             
 </table>
  
@@ -393,9 +399,9 @@ let Nav = () => {
              </Link>
            ) : (
              <>
-               {/* <div className="logout-container" onClick={signoutHandler}>
+               <div className="logout-container" onClick={signoutHandler}>
                  <img src="logout.svg" />
-               </div> */}
+               </div>
              </>
            )}
          </div>
@@ -407,20 +413,6 @@ let Nav = () => {
  };
 
 export default Nav;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
