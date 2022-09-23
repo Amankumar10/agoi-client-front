@@ -265,7 +265,8 @@ let Nav = () => {
               
               <a href="#">Resources</a>
 
-
+{/* cashout */}
+{/* 
               <div className="dropdown">
                
                 <div className="cor" >
@@ -286,21 +287,21 @@ let Nav = () => {
                     <Link to={"/Cashouthistory"}>Cashout History</Link>
                   </div>
                     </div>
-                    {/* {console.log()} */}
-                    </div>
+              
+                    </div> */}
                        </div>     
        
 
 
-   
-            <div className="dropdowns">
+ {/* notification   */}
+            {/* <div className="dropdowns">
             <div className="button">
                 
                
-                  {/* <span  className="button__badge"> {usernotifications.unseenTotal}</span> */}
+                
                 <NotificationBadge count={usernotifications.unseenTotal}       effect={Effect.SCALE} />
                 <span style={{fontSize:"28px"}}  className="material-symbols-outlined">notifications</span>
-                {/* onClick={() => setCheck(!check)} */}
+              
                   <div className="dropdown-contents">
       
            <div className="table-containers">
@@ -364,14 +365,14 @@ let Nav = () => {
                     </tbody>
                 )}
             
-</table>
+     </table>
  
       </div>
   
              </div>
              </div>
 
-            </div>
+            </div> */}
 
             </>
         )} 
