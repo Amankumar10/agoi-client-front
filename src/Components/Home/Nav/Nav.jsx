@@ -48,21 +48,22 @@ let Nav = () => {
   // }
 
 // var started
-  const [user, setUser] = useState([])
+  // const [user, setUser] = useState([])
   let { addToast } = useToasts();
   let [open, setOpen] = useState(false);
   let [opens, setOpens] = useState(false);
   let  [check, setCheck] = useState(false);
-  const [totalseen, setTotalseen] = useState();
+  let [totalseen, setTotalseen] = useState();
   let [modalItem, setModalItem] = useState();
-  const [counts, setcounts] = useState([])
+ let [counts, setcounts] = useState([])
   // const [first, setFirst] = useState(true)
   let [notification, setNotification] = useState([])
-  const [usernotifications, setuserNotifications] = useState([])
+  // const [usernotifications, setuserNotifications] = useState([])
   let [modalItems, setModalItems] = useState();
   let [orders, setOrders] = useState([]);
-  const [status, setStatus] = useState();
+  // const [status, setStatus] = useState();
   //var ends
+
  
 
  let state = useSelector((state) => state); // fectching user data from redux store
