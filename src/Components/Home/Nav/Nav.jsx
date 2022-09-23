@@ -65,34 +65,34 @@ let Nav = () => {
   //var ends
  
 
-  let state = useSelector((state) => state); // fectching user data from redux store
+ let state = useSelector((state) => state); // fectching user data from redux store
 
-  let signoutHandler = async () => {
-    await auth.signOut();  // calling auth singout to logout the user
-  };
+  // let signoutHandler = async () => {
+  //   await auth.signOut();  // calling auth singout to logout the user
+  // };
 
-  let handleOpen = (item) => {  // it open the cashout input box
-    setModalItem(item);
-    setOpen(true);              //use state
-  };
+  // let handleOpen = (item) => {  // it open the cashout input box
+  //   setModalItem(item);
+  //   setOpen(true);              //use state
+  // };
 
-  let handleClose = () => {     // close the
-    setOpen(false);
-  };
+  // let handleClose = () => {     // close the
+  //   setOpen(false);
+  // };
 
 
   
 
-  let handleOpens = (e) => {   // it open the notification input box
+  // let handleOpens = (e) => {   // it open the notification input box
     // setModalItems(items);
     // items.preventDefault();
     // jh();
-    setOpens(true);
-  };
+  //   setOpens(true);
+  // };
 
-  let handleCloses = () => {  
-    setOpens(false);
-  };
+  // let handleCloses = () => {  
+  //   setOpens(false);
+  // };
 
   // let fetchuser = async () => { // to fetch the user from the get by ID api
  
@@ -181,17 +181,17 @@ let Nav = () => {
 
 
 
-  useEffect(() => {
+  // useEffect(() => {
     // fetchuser();
     // fetchstatus();
    
 
-  }, [state]);
+  // }, [state]);
   
   return (
     <>
     <Sell
-      handleClose={handleClose}
+      // handleClose={handleClose}
       item={modalItem}
       walletBalance={orders.wallet_balance} 
       open={open}
@@ -199,7 +199,7 @@ let Nav = () => {
       />
 
       <Ping 
-      handleCloses={handleCloses}
+      // handleCloses={handleCloses}
       // item={modalItems}   
       open={opens}   
       // fetchuser={fetchuser}
@@ -259,12 +259,12 @@ let Nav = () => {
                
                   <span className="material-symbols-outlined">Wallet</span>
                   <div className="dropdown-content">
-                    <div
+                    {/* <div
                       onClick={() => handleOpen()}
                       className="we"
                     >
                       Cashout =       &#8377; {orders.wallet_balance}
-                    </div> 
+                    </div>  */}
                     <Link to={"/wallet"}>Referral History</Link>
                    
                    
@@ -392,9 +392,9 @@ let Nav = () => {
              </Link>
            ) : (
              <>
-               <div className="logout-container" onClick={signoutHandler}>
+               {/* <div className="logout-container" onClick={signoutHandler}>
                  <img src="logout.svg" />
-               </div>
+               </div> */}
              </>
            )}
          </div>
