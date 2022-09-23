@@ -66,7 +66,7 @@ let Nav = () => {
  
 
   let state = useSelector((state) => state); // fectching user data from redux store
-  const [isActive, setIsActive] = useState(false);
+
   let signoutHandler = async () => {
     await auth.signOut();  // calling auth singout to logout the user
   };
@@ -120,38 +120,34 @@ let Nav = () => {
 
   
   
-  let fetchstatus = async () => {
-    // handleClose();
-    // handleCloses();
-    // console.log(state._id,'this is id')
-    if(state) {
-      const data = await axios.get(
-        `${BASE_URL}/user/user-notification/${state._id}`); // user id 
+  // let fetchstatus = async () => {
+ 
+  //   if(state) {
+  //     const data = await axios.get(
+  //       `${BASE_URL}/user/user-notification/${state._id}`); // user id 
         
         
-        console.log(data);
-        const notifyid = (data.data.data);
+  //       console.log(data);
+  //       const notifyid = (data.data.data);
       
-          notifyid.forEach(element => {
-            console.log(element);
-            console.log(element._id);
-          });
+  //         notifyid.forEach(element => {
+  //           console.log(element);
+  //           console.log(element._id);
+  //         });
    
 
 
 
 
-      if (data.data && data.data.data) {
-        let response = data.data;
-        console.log(response);
-       
-        // setOrders(response);
-        // setUser(response);
-        setuserNotifications(response)
-        setStatus(response);
-      }
-    }
-  };
+  //     if (data.data && data.data.data) {
+  //       let response = data.data;
+  //       console.log(response);
+   
+  //       setuserNotifications(response)
+  //       setStatus(response);
+  //     }
+  //   }
+  // };
 
 
 
@@ -175,12 +171,8 @@ let Nav = () => {
         
       });
       
-      if (data.data && data.data.data) {
-        // addToast("Notification has been update", {
-        //   appearance: "success",
-        //   autoDismiss: true,
-        // });
-        fetchstatus();
+      if (data.data && data.data.data) {  
+        // fetchstatus();
       } else {
         addToast(data.data.message, { appearance: "error", autoDismiss: true });
       }
@@ -195,14 +187,14 @@ let Nav = () => {
 
   useEffect(() => {
     fetchuser();
-    fetchstatus();
-    // console.log(state._id)
+    // fetchstatus();
+   
 
   }, [state]);
   
   return (
     <>
-    {/* <Sell
+    <Sell
       handleClose={handleClose}
       item={modalItem}
       walletBalance={orders.wallet_balance} 
@@ -410,7 +402,7 @@ let Nav = () => {
              </>
            )}
          </div>
-         </div>  */}
+         </div> 
             
 
      </>
