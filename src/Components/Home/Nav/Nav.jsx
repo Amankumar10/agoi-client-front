@@ -1,24 +1,24 @@
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router";
+// import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
 //  import "../../../Components/Notify/Noftify.css";
-import { Box, Button, makeStyles, Typography, Badge } from "@material-ui/core";
+// import { Box, Button, makeStyles, Typography, Badge } from "@material-ui/core";
 
-import { auth } from "../../../firebase/firebase";
+// import { auth } from "../../../firebase/firebase";
 import "../../../styles/Home/Nav/Nav.css";
 import Sell from "../../Investment/Sell";
 import Ping from "../../Notify/Ping"
-import { useToasts } from "react-toast-notifications";
+// import { useToasts } from "react-toast-notifications";
 
-import { BASE_URL } from "../../../Constants/api_constants";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { GiHamburgerMenu } from 'react-icons/gi'
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
-import { useReducer } from "react";
-import moment from "moment";
-import { blueGrey } from "@mui/material/colors";
+// import { BASE_URL } from "../../../Constants/api_constants";
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+// import { GiHamburgerMenu } from 'react-icons/gi'
+// import NotificationBadge from "react-notification-badge";
+// import { Effect } from "react-notification-badge";
+// import { useReducer } from "react";
+// import moment from "moment";
+// import { blueGrey } from "@mui/material/colors";
 
 
 import React from "react";
@@ -26,19 +26,14 @@ import React from "react";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 // import SearchIcon from "@material-ui/Search";
-import { SearchOutlined } from "@mui/icons-material";
+// import { SearchOutlined } from "@mui/icons-material";
 // import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 // import { Link } from "react-router-dom";
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+// import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import InstagramIcon from "@mui/icons-material/Instagram";
-import SearchIcon from "@mui/icons-material/Search";
-import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
-import CallIcon from "@mui/icons-material/Call";
 
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import PersonIcon from "@mui/icons-material/Person";
+import CallIcon from "@mui/icons-material/Call";
 
 
 let Nav = () => {
@@ -49,24 +44,24 @@ let Nav = () => {
 
 // var started
   // const [user, setUser] = useState([])
-  let { addToast } = useToasts();
-  let [open, setOpen] = useState(false);
-  let [opens, setOpens] = useState(false);
-  let  [check, setCheck] = useState(false);
-  let [totalseen, setTotalseen] = useState();
-  let [modalItem, setModalItem] = useState();
- let [counts, setcounts] = useState([])
+  // let { addToast } = useToasts();
+  // let [open, setOpen] = useState(false);
+  // let [opens, setOpens] = useState(false);
+  // let  [check, setCheck] = useState(false);
+  // let [totalseen, setTotalseen] = useState();
+  // let [modalItem, setModalItem] = useState();
+//  let [counts, setcounts] = useState([])
   // const [first, setFirst] = useState(true)
-  let [notification, setNotification] = useState([])
+  // let [notification, setNotification] = useState([])
   // const [usernotifications, setuserNotifications] = useState([])
-  let [modalItems, setModalItems] = useState();
-  let [orders, setOrders] = useState([]);
+  // let [modalItems, setModalItems] = useState();
+  // let [orders, setOrders] = useState([]);
   // const [status, setStatus] = useState();
   //var ends
 
  
 
- let state = useSelector((state) => state); // fectching user data from redux store
+  let state = useSelector((state) => state); // fectching user data from redux store
 
   // let signoutHandler = async () => {
   //   await auth.signOut();  // calling auth singout to logout the user
@@ -193,18 +188,18 @@ let Nav = () => {
     <>
     <Sell
       // handleClose={handleClose}
-      item={modalItem}
-      walletBalance={orders.wallet_balance} 
-      open={open}
+      // item={modalItem}
+      // walletBalance={orders.wallet_balance} 
+      // open={open}
       // fetchuser={fetchuser}
       />
 
       <Ping 
       // handleCloses={handleCloses}
       // item={modalItems}   
-      open={opens}   
+      // open={opens}   
       // fetchuser={fetchuser}
-      counts={counts}
+      // counts={counts}
   />
  
         
@@ -243,7 +238,7 @@ let Nav = () => {
         </div>
 
 
-        {!state || !state.multiFactor || !state.multiFactor.user ? (
+        {!state || !state.multiFactor  ? (
           ""
         ) : (
           <>
