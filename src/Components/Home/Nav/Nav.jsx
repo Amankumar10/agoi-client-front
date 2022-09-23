@@ -1,24 +1,24 @@
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router";
+// import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
 //  import "../../../Components/Notify/Noftify.css";
-import { Box, Button, makeStyles, Typography, Badge } from "@material-ui/core";
+// import { Box, Button, makeStyles, Typography, Badge } from "@material-ui/core";
 
-import { auth } from "../../../firebase/firebase";
+// import { auth } from "../../../firebase/firebase";
 import "../../../styles/Home/Nav/Nav.css";
 import Sell from "../../Investment/Sell";
 import Ping from "../../Notify/Ping"
-import { useToasts } from "react-toast-notifications";
+// import { useToasts } from "react-toast-notifications";
 
-import { BASE_URL } from "../../../Constants/api_constants";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { GiHamburgerMenu } from 'react-icons/gi'
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
-import { useReducer } from "react";
-import moment from "moment";
-import { blueGrey } from "@mui/material/colors";
+// import { BASE_URL } from "../../../Constants/api_constants";
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+// import { GiHamburgerMenu } from 'react-icons/gi'
+// import NotificationBadge from "react-notification-badge";
+// import { Effect } from "react-notification-badge";
+// import { useReducer } from "react";
+// import moment from "moment";
+// import { blueGrey } from "@mui/material/colors";
 
 
 import React from "react";
@@ -26,19 +26,19 @@ import React from "react";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 // import SearchIcon from "@material-ui/Search";
-import { SearchOutlined } from "@mui/icons-material";
+// import { SearchOutlined } from "@mui/icons-material";
 // import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 // import { Link } from "react-router-dom";
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+// import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import InstagramIcon from "@mui/icons-material/Instagram";
-import SearchIcon from "@mui/icons-material/Search";
-import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
+// import SearchIcon from "@mui/icons-material/Search";
+// import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 import CallIcon from "@mui/icons-material/Call";
 
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import PersonIcon from "@mui/icons-material/Person";
+// import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+// import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+// import PersonIcon from "@mui/icons-material/Person";
 
 
 let Nav = () => {
