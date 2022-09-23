@@ -155,29 +155,29 @@ let Nav = () => {
 
 
 
-  let handleRead = async (event,nID) => {
-    try {
+  // let handleRead = async (event,nID) => {
+  //   try {
      
 
 
-      let data = await axios.post(BASE_URL + `/user/user-notification/${nID}`, {
-  status:true,
+  //     let data = await axios.post(BASE_URL + `/user/user-notification/${nID}`, {
+  // status:true,
        
     
         
-      });
+  //     });
       
-      if (data.data && data.data.data) {  
-        // fetchstatus();
-      } else {
-        addToast(data.data.message, { appearance: "error", autoDismiss: true });
-      }
-    } catch (e) {
-      console.log(e);
-      addToast("error occurred", { appearance: "error", autoDismiss: true });
-    }
+  //     if (data.data && data.data.data) {  
+  //       // fetchstatus();
+  //     } else {
+  //       addToast(data.data.message, { appearance: "error", autoDismiss: true });
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
+  //     addToast("error occurred", { appearance: "error", autoDismiss: true });
+  //   }
     
-  };
+  // };
 
 
 
@@ -329,11 +329,11 @@ let Nav = () => {
                                     
                                   
                                      
-                                     
+{/*                                      
                                      <div onClick={event => handleRead(event,e._id)} ><td onClick={() => {handleOpens(setcounts(e.message) )}}>{e.message}</td> 
                                       <td >{e.status ? "" :  <div className="dot" ></div> }</td> 
                                      
-                                     </div>
+                                     </div> */}
                                      
                                         
 
