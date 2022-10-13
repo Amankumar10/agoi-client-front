@@ -1284,7 +1284,7 @@
   "resolved" "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz"
   "version" "0.7.4"
 
-"@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.10.4", "@emotion/react@^11.4.1", "@emotion/react@^11.5.0":
+"@emotion/react@^11.0.0-rc.0", "@emotion/react@^11.4.1", "@emotion/react@^11.5.0", "@emotion/react@^11.9.4":
   "integrity" "sha512-j0AkMpr6BL8gldJZ6XQsQ8DnS9TxEQu1R+OGmDZiWjBAJtCcbt0tS3I/YffoqHXxH6MjgI7KdMbYKw3MEiU9eA=="
   "resolved" "https://registry.npmjs.org/@emotion/react/-/react-11.10.4.tgz"
   "version" "11.10.4"
@@ -1341,7 +1341,7 @@
   "resolved" "https://registry.npmjs.org/@emotion/sheet/-/sheet-0.9.4.tgz"
   "version" "0.9.4"
 
-"@emotion/styled@^11.10.4", "@emotion/styled@^11.3.0":
+"@emotion/styled@^11.3.0", "@emotion/styled@^11.8.4":
   "integrity" "sha512-pRl4R8Ez3UXvOPfc2bzIoV8u9P97UedgHS4FPX594ntwEuAMA114wlaHvOK24HB48uqfXiGlYIZYCxVJ1R1ttQ=="
   "resolved" "https://registry.npmjs.org/@emotion/styled/-/styled-11.10.4.tgz"
   "version" "11.10.4"
@@ -2228,7 +2228,7 @@
   dependencies:
     "@babel/runtime" "^7.18.9"
 
-"@mui/material@^5.0.0", "@mui/material@^5.10.3":
+"@mui/material@^5.0.0", "@mui/material@^5.6.3":
   "integrity" "sha512-g0lzHcqWHYeOEAxTzcwpM1I7b+wyiRTeXkEdRsspnOpZtb0H/1xg386tMFRGbxBJ4zfVGT+TWublofw7pyQkqw=="
   "resolved" "https://registry.npmjs.org/@mui/material/-/material-5.10.3.tgz"
   "version" "5.10.3"
@@ -4526,9 +4526,9 @@
     "cssom" "~0.3.6"
 
 "csstype@^2.5.2":
-  "integrity" "sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA=="
-  "resolved" "https://registry.npmjs.org/csstype/-/csstype-2.6.20.tgz"
-  "version" "2.6.20"
+  "integrity" "sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w=="
+  "resolved" "https://registry.npmjs.org/csstype/-/csstype-2.6.21.tgz"
+  "version" "2.6.21"
 
 "csstype@^2.5.7":
   "integrity" "sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA=="
@@ -4796,9 +4796,9 @@
     "domelementtype" "^2.2.0"
 
 "dompurify@^2.2.0":
-  "integrity" "sha512-o7Fg/AgC7p/XpKjf/+RC3Ok6k4St5F7Q6q6+Nnm3p2zGWioAY6dh0CbbuwOhH2UcSzKsdniE/YnE2/92JcsA+g=="
-  "resolved" "https://registry.npmjs.org/dompurify/-/dompurify-2.3.10.tgz"
-  "version" "2.3.10"
+  "integrity" "sha512-Be9tbQMZds4a3C6xTmz68NlMfeONA//4dOavl/1rNw50E+/QO0KVpbcU0PcaW0nsQxurXls9ZocqFxk8R2mWEA=="
+  "resolved" "https://registry.npmjs.org/dompurify/-/dompurify-2.4.0.tgz"
+  "version" "2.4.0"
 
 "domutils@^1.7.0":
   "integrity" "sha512-Lgd2XcJ/NjEw+7tFvfKxOzCYKZsdct5lczQ2ZaQY8Djz7pfAD3Gbp8ySJWtreII/vDlMVmxwa6pHmdxIYgttDg=="
@@ -9644,7 +9644,7 @@
   "resolved" "https://registry.npmjs.org/style-loader/-/style-loader-3.3.1.tgz"
   "version" "3.3.1"
 
-"styled-components@^5.3.1", "styled-components@^5.3.5", "styled-components@>= 2":
+"styled-components@^5.3.1", "styled-components@>= 2":
   "integrity" "sha512-ndETJ9RKaaL6q41B69WudeqLzOpY1A/ET/glXkNZ2T7dPjPqpPCXXQjDFYZWwNnE5co0wX+gTCqx9mfxTmSIPg=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.3.5.tgz"
   "version" "5.3.5"

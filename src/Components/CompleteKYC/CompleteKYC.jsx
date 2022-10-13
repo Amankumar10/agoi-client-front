@@ -4,7 +4,25 @@ import { Navigate, useNavigate } from "react-router";
 import { BASE_URL } from "../../Constants/api_constants";
 import { auth } from "../../firebase/firebase";
 import { useToasts } from "react-toast-notifications";
+// import { Button, Backdrop, CircularProgress } from "@material-ui/core";
 import "../../styles/CompleteKYC/CompleteKYC.css";
+import * as React from 'react';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Button from '@mui/material/Button';
+import { makeStyles } from "@material-ui/core/styles";
+import Loader from "../Loader/Loader";
+
+
+
+
+const useStyles = makeStyles((theme) => ({
+
+  backdrop:{
+       color: '#fff', zIndex: theme.zIndex.drawer + 1 },
+}));
+
+
 let CompleteKYC = () => {
   let navigate = useNavigate();
   let firebaseuser = auth.currentUser;
@@ -19,6 +37,8 @@ let CompleteKYC = () => {
   let [pancard, setPancard] = useState("");
   let [dematAccNo, setDematAccNo] = useState("");
   let { addToast } = useToasts();
+  const [open, setOpen] = useState(false);
+  const classes = useStyles();
 
   async function uploadImage(url) {
     if (url) {
@@ -50,6 +70,7 @@ let CompleteKYC = () => {
           autoDismissTimeout: 1500,
         });
         return data.data.url;
+     
       } catch (e) {
         console.log(e);
       }
@@ -104,6 +125,7 @@ let CompleteKYC = () => {
           autoDismiss: true,
           autoDismissTimeout: 1500,
         });
+        navigate("/");
       } catch (e) {
         addToast("data couldn't be updated", {
           appearance: "error",
@@ -144,6 +166,12 @@ let CompleteKYC = () => {
               console.log("couldn't mark flag");
             }
           navigate("/");
+
+
+
+        
+
+          
         } else {
           setUser(data.data.data);
         }
@@ -153,6 +181,26 @@ let CompleteKYC = () => {
     }
   };
 
+// const handleToggle = () => {
+//   setOpen(!open);
+//   addKYCdetails();
+//   navigate("/");
+// }
+
+
+const handleClose = () => {
+  setOpen(false);
+  
+};
+
+const handleToggle = () => {
+  setOpen(!open);
+  addKYCdetails();
+  // navigate("/complete-kyc");
+}
+
+
+
   useEffect(() => {
     if (auth.currentUser) getUser();
   }, []);
@@ -160,9 +208,19 @@ let CompleteKYC = () => {
   return !auth.currentUser ? (
     <Navigate to="/login"></Navigate>
   ) : !user ? (
-    <>Loading...</>
+    <>
+       loading...
+       {/* <Loader /> */}
+    
+    {/* <Backdrop
+          className={classes.backdrop}
+            open>
+            <CircularProgress color="red" />
+          </Backdrop> */}
+    </>
   ) : (
     <>
+
       <div className="complete-kyc-title-container">
         <h1>Agoi Financial Services</h1>
       </div>
@@ -193,7 +251,8 @@ let CompleteKYC = () => {
               placeholder="Enter Bank Account number"
             />
           </div>
-          <div className="col-6">
+          <div className="col-6" id="hg">
+            
             <label htmlFor="">
               Upload Pan Card
               <span style={{ color: user.pan_card_link ? "red" : "" }}>*</span>
@@ -207,7 +266,7 @@ let CompleteKYC = () => {
               placeholder="Enter pan card number"
             />
           </div>
-          <div className="col-6">
+          <div className="col-6" id="hg">
             <label htmlFor="">
               Upload passbook front page/cancelled cheque
               <span style={{ color: user.account_number_link ? "red" : "" }}>
@@ -237,7 +296,7 @@ let CompleteKYC = () => {
               placeholder="Enter Aadhar Card Number"
             />
           </div>
-          <div className="col-6">
+          <div className="col-6" id="hg">
             <label htmlFor="">
               Anyone of CML/ DI Slip/ Demat Profile Screenshot
               <span style={{ color: user.demat_screenshot ? "red" : "" }}>
@@ -299,7 +358,26 @@ let CompleteKYC = () => {
           </div>
         </div>
       </div>
-      <div
+
+      <div className="complete-kyc-btn"
+       
+       onClick={handleToggle}     
+                
+  >
+        Complete KYC</div>
+        <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+     
+    
+
+
+
+{/* <div
         onClick={async () => {
           await addKYCdetails();
           navigate("/");
@@ -308,7 +386,11 @@ let CompleteKYC = () => {
         className="complete-kyc-btn"
       >
         Complete KYC
-      </div>
+      </div> */}
+
+        
+    
+ 
     </>
   );
 };

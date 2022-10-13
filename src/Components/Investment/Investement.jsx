@@ -181,7 +181,7 @@ import { BASE_URL } from "../../Constants/api_constants";
 import { useEffect, useState } from "react";
 import generatePDF from "./repGenerator";
 import SellStocksModal from "./SellStocksModal";
-import { lightGreen } from '@mui/material/colors';
+// import { lightGreen } from '@mui/material/colors';
 
 
 const Investement = () => {

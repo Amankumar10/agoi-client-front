@@ -1,27 +1,62 @@
+
+
+
 .navbar{
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
-    /* background: red; */
-
+    height: 70px;
     background: var(--home-gray);
-    /* var(--darkgreyColor); */
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: white;
-
     font-size: 14px;
     z-index: 9999;
     transition: 300ms;
 }
 
-.yo{
+.mobile-menu-icon{
+    display: none;
+}
 
-            
-        }
+
+
+
+.links,
+.dropdowns {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding:10px;
+    margin:0 10px;
+    cursor: pointer;
+
+}
+.nav-links{
+    display: flex;
+    /* font-size: 4px; */
+
+    justify-content: flex-end;
+    list-style: none;
+    width: 75%;
+}
+
+
+
+.navbar::before{
+    content: "";
+    background-color:  var(--home-gray);;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+    
 
         .navbars{
             display: flex;
@@ -29,7 +64,7 @@
             justify-self: end;
             /* border-radius: 30px; */
             /* border: 2px solid grey; */
-    background-color: rgba(23,31,42,255);
+            background-color: rgba(23,31,42,255);
 
             height: 6vh;
           }
@@ -66,26 +101,23 @@
             /* justify-content: flex-end; */
             /* justify-content: flex-start; */
             justify-content: center;
-           background-color: rgba(23,31,42,255);
-           /* flex-grow: 1; */
-           padding-right: 134px;
-
+            background-color: rgba(23,31,42,255);
+            /* flex-grow: 1; */
+            /* padding-right: 134px; */
             /* align-items: center;
             align-items: flex-end;
             align-items: flex-start; */
             /* flex-wrap: wrap; */
             /* flex-wrap: wrap-reverse; */
-            /* flex-flow: column wrap; */
-            
-            
+            /* flex-flow: column wrap; */         
         }
 
         .f{
             /* display: flex; */
             /* justify-self: start; */
-    flex-grow: 1;
-    margin:12px;
-    padding-left: 134px;
+            flex-grow: 1;
+            margin:12px;
+            /* padding-left: 134px; */
             /* padding-right: 730px; */
         }
         
@@ -194,7 +226,14 @@
     grid-area: 31px;
    
 }
-
+.dropdowns {
+    position: relative;
+    /* margin-top: 24px; */
+    display: inline-block;
+    padding-right: 23px;
+   
+   
+}
 
 .ee{
     color: rgb(202, 197, 197);
@@ -236,14 +275,7 @@
 
 
 
-.dropdowns {
-    position: relative;
-    /* margin-top: 24px; */
-    display: inline-block;
-    padding-right: 23px;
-   
-   
-}
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     cursor: pointer;
@@ -268,6 +300,22 @@
     z-index: 1;
 }
 
+
+
+
+
+#idea{
+    font-size: 30px;
+    
+    
+    
+    margin-top: 23px;
+    margin:2px;
+    /* padding-top: 17px; */
+}
+    /* display: flex;  */
+    /* padding-right: 374px; */
+
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
@@ -283,7 +331,15 @@
 
 .we:hover {background: rgb(46, 39, 39);}
 
+#idea:hover {color: #45a049;}
+#i:hover {color: #45a049;}
+#iee:hover {color: #45a049;}
 
+.logo:hover {color: white;}
+.button:hover {color: #45a049;}
+
+
+.we:hover {color: #45a049;}
 .me:hover {background: rgb(165, 33, 33);}
 
 /* Show the dropdown menu on hover */
@@ -330,8 +386,15 @@ a{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    /* color: #000; */
 }
+
+
+
+
+
+
+
 
 .links a{
     color : white;
@@ -400,6 +463,8 @@ a{
     position: relative; /* All 'absolute'ly positioned elements are relative to this one */
     padding: 2px 5px; /* Add some padding so it looks nice */
   }
+
+
   
   /* Make the badge float in the top right corner of the button */
   .button__badge {
@@ -474,6 +539,22 @@ a{
 
 /* .table-containers :hover {background: rgb(185, 29, 29);} */
 
+@media (max-width: 530px){
+    #idea { 
+        font-size: 22px !important;
+        padding-top: 5px !important;
+        display: flex;
+
+    }
+    
+
+}
+
+
+
+
+
+
 
 @media screen and (max-width:1139px) {
     .links{
@@ -487,11 +568,15 @@ a{
         cursor: pointer;
         
     }
-    /* .logo {
-        font-size: 10px;
+
+
+    
+     .logo { 
+        font-size: 1px !important;
         color: aliceblue;
     }
-    
+}
+    /*
     
     .h-nav-resp{
         height: 72px;
@@ -500,4 +585,98 @@ a{
        opacity: 0;
     } */
 
-}
+
+
+
+    @media screen and (max-width: 780px) {
+        .idea{
+            display: flex;
+            position: absolute;
+            /* top:15px;
+            left:35px; */
+    
+        }
+        .nav-links{
+            display: none;
+        }
+    
+    
+        .nav-links-mobile{
+            position: absolute;
+            display: block;
+            list-style: none;
+            color: #000;
+            background: white;
+            left:0;
+            height: 745px;
+            top: 60px;
+            transition: all 0.5s ease-out;
+            width: 100%;
+        }
+
+        
+        #iee,
+        .i,
+        .links,
+        .dropdowns,
+        /* .button, */
+        /* .dropdown, */
+        .cor
+        {      
+        text-align: center;
+        padding:15px;
+        width: 100%;
+        display: block;
+        /* color: #000; */
+        transition: all 0.5s ease;
+        
+        
+       }
+     
+
+    
+
+
+
+      
+       #iee,
+       .wallet-container,
+       .button{
+        color: black;
+       }
+       
+       .we{
+        color: #000;
+       }
+
+
+       .login-container{
+       border: 1px solid black;
+       cursor: pointer;
+       margin-top: 34px;
+       color: #000;
+
+       border-radius: 25px;
+       }
+       #iss{
+        text-align: center;
+        padding:32px;
+        width: 100%;      
+        transition: all 0.5s ease;
+       }
+    
+        .mobile-menu-icon{
+            display: block;
+            position: absolute;
+            font-size:0;
+            color: white;
+            background-color: var(--home-blue);
+            border:none;
+            outline:none;
+            /* top:15px; */
+            right:5px;
+    
+        }
+    }
+        
+    

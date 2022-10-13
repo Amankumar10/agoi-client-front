@@ -244,7 +244,7 @@
 //                       onClick={() => handleOpen()}
 //                       className="we"
 //                     >
-//                       Cashout =       &#8377; {orders.wallet_balance}
+//                       Cashout = &#8377; {orders.wallet_balance}
 //                     </div> 
 //                     <Link to={"/wallet"}>Referral History</Link>
                    

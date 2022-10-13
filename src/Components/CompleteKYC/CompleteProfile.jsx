@@ -7,7 +7,11 @@ import {
   Radio,
   RadioGroup,
   Select,
-} from "@mui/material";
+  } from "@mui/material";
+import Loader from "../Loader/Loader";
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Button from '@mui/material/Button';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router";
@@ -15,6 +19,19 @@ import { useToasts } from "react-toast-notifications";
 import { BASE_URL } from "../../Constants/api_constants";
 import { auth } from "../../firebase/firebase";
 import "../../styles/Stocks/CompleteProfileDialog.css";
+import { makeStyles } from "@material-ui/core/styles";
+
+
+
+const useStyles = makeStyles((theme) => ({
+
+  backdrop:{
+       color: '#fff', zIndex: theme.zIndex.drawer + 1 },
+}));
+
+
+
+
 
 let CompleteProfile = () => {
   let [user, setUser] = useState();
@@ -28,7 +45,21 @@ let CompleteProfile = () => {
   let [desig, setDesig] = useState("");
   let navigate = useNavigate();
   let { addToast } = useToasts();
+
+  const [open, setOpen] = useState(false);
+
+  // const { loading} = useSelector(
+  //   (state) => state);
+  
+  const classes = useStyles();
+  
+  
+  
+  
+  
   let addComleteProfile = async () => {
+    
+
     try {
       let requestBody = {
         mobile_number: auth.currentUser.phoneNumber,
@@ -41,16 +72,23 @@ let CompleteProfile = () => {
         dob: dob,
       };
 
+
       let data = await axios.post(
         BASE_URL + "/user/complete-profile",
         requestBody
+
       );
+
+
+ 
+
       console.log(data);
       addToast("successfully added data", {
         appearance: "success",
         autoDismiss: true,
         autoDismissTimeout: 1500,
       });
+      navigate("/complete-kyc");
     } catch (e) {
       addToast("data couldn't be updated", {
         appearance: "error",
@@ -87,6 +125,7 @@ let CompleteProfile = () => {
               console.log("couldn't mark flag");
             }
           navigate("/complete-kyc");
+      
         } else {
           setUser(data.data.data);
         }
@@ -95,14 +134,55 @@ let CompleteProfile = () => {
       console.log(e);
     }
   };
+  
+  const handleClose = () => {
+    setOpen(false);
+    
+  };
+
+
+
+  const handleToggle = () => {
+    setOpen(!open);
+    addComleteProfile();
+    // navigate("/complete-kyc");
+  }
+ 
 
   useEffect(() => {
     if (auth.currentUser) getUser();
+
   }, []);
+
+
+
+
+
+
+
+
+  
+
   return !auth.currentUser ? (
     <Navigate to="/login" state={{ route: "/complete-profile" }}></Navigate>
   ) : !user ? (
-    <>Loading...</>
+    <>
+         {/* <Loader /> */}
+loading...
+
+
+{/* 
+  <Backdrop
+      className={classes.backdrop}
+        open
+    
+      >
+        <CircularProgress color="red" />
+      </Backdrop> */}
+  
+  
+  
+    </>
   ) : (
     <>
       <div className="complete-kyc-title-container">
@@ -219,18 +299,74 @@ let CompleteProfile = () => {
             </div>
           </div>
         </div>
-        <div
+        {/* <div
+
           onClick={async () => {
+      
+            
+            
             await addComleteProfile();
+            
             navigate("/complete-kyc");
           }}
           className="complete-kyc-btn"
         >
           Complete Profile
         </div>
-      </div>
+
+         */}
+        
+
+
+     
+
+      <div className="complete-kyc-btn"
+       
+       onClick={handleToggle}     
+                
+  >
+        Complete Profile</div>
+        <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+     
+      </div> 
+
+
+
+
+
+{/*    
+              </Fragment>
+      )}
+    </Fragment> */}
     </>
   );
 };
 
 export default CompleteProfile;
+
+
+
+
+        {/* <div>
+
+      <div className="complete-kyc-btn"
+       
+       onClick={handleToggle}>
+        Complete KYC</div>
+        <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+    
+      >
+
+    
+        <CircularProgress color="inherit" />
+      </Backdrop>
+     
+      </div> */}
