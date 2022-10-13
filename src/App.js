@@ -22,7 +22,7 @@ import GetOrderResponse from "./Components/Stocks/GetOrderResponse";
 import Wallet from "./Components/Wallet/Wallet";
 import Notify from "./Components/Notify/Notify";
 import Cashouthistory from "./Components/CashoutHistory/Cashouthistory"
-import Hom from "./Components/Hom"
+
 
 let App = () => {
   let dispatch = useDispatch();
@@ -76,7 +76,7 @@ let App = () => {
             <Route path="/stocks" element={<Stocks />} />
             <Route path="/stock-main" element={<StockMain />} />
             <Route path="/" element={<Home />} />
-            <Route path="/hom" element={<Hom/>} />
+
 
           </Routes>
         </ToastProvider>

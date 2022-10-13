@@ -9,9 +9,9 @@ import "../../styles/CompleteKYC/CompleteKYC.css";
 import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import { makeStyles } from "@material-ui/core/styles";
-import Loader from "../Loader/Loader";
+
 
 
 
